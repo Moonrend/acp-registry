@@ -1,0 +1,34 @@
+{
+  "id": "deepagents",
+  "name": "DeepAgents",
+  "version": "0.1.7",
+  "enabled": false,
+  "profileId": "deepagents",
+  "dist": {
+    "kind": "npx",
+    "package": "deepagents-acp@0.1.7"
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

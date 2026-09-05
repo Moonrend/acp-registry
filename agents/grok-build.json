@@ -1,0 +1,26 @@
+{
+  "id": "grok-build",
+  "name": "Grok Build",
+  "version": "1.0.21",
+  "enabled": false,
+  "profileId": "grok",
+  "dist": {
+    "kind": "npx",
+    "package": "@xai-official/grok@1.0.21",
+    "args": [
+      "agent",
+      "stdio"
+    ]
+  },
+  "storage": {
+    "mode": "state-home",
+    "xdg": true,
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

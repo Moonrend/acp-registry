@@ -1,0 +1,43 @@
+{
+  "id": "factory-droid",
+  "name": "Factory Droid",
+  "version": "0.212.1",
+  "enabled": false,
+  "profileId": "factory-droid",
+  "dist": {
+    "kind": "npx",
+    "package": "droid@0.212.1",
+    "args": [
+      "exec",
+      "--output-format",
+      "acp-daemon"
+    ],
+    "env": {
+      "DROID_DISABLE_AUTO_UPDATE": "true",
+      "FACTORY_DROID_AUTO_UPDATE_ENABLED": "false"
+    }
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "autohand",
+  "name": "Autohand Code",
+  "version": "0.2.1",
+  "enabled": false,
+  "profileId": "autohand",
+  "dist": {
+    "kind": "npx",
+    "package": "@autohandai/autohand-acp@0.2.1"
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

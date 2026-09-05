@@ -1,0 +1,38 @@
+{
+  "id": "qwen-code",
+  "name": "Qwen Code",
+  "version": "0.23.0",
+  "enabled": true,
+  "profileId": "qwen-code",
+  "dist": {
+    "kind": "npx",
+    "package": "@qwen-code/qwen-code@0.23.0",
+    "args": [
+      "--acp",
+      "--experimental-skills"
+    ]
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

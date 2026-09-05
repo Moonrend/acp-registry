@@ -1,0 +1,40 @@
+{
+  "id": "cortex-code",
+  "name": "Cortex Code",
+  "version": "1.0.73",
+  "enabled": false,
+  "profileId": "cortex-code",
+  "dist": {
+    "kind": "binary",
+    "archive": "https://sfc-repo.snowflakecomputing.com/cortex-code-cli/a4643c4278/1.0.73%2B180523.e6179a031de9/coco-1.0.73%2B180523.e6179a031de9-linux-amd64.tar.gz",
+    "sha256": "8821e6776d2e260ee82ba3f58e5a5c47457a24105f3c0408f25963f2746ce29e",
+    "cmd": "./coco-1.0.73+180523.e6179a031de9-linux-amd64/cortex",
+    "args": [
+      "acp",
+      "serve"
+    ]
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

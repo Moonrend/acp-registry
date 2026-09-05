@@ -1,0 +1,43 @@
+{
+  "id": "vtcode",
+  "name": "VT Code",
+  "version": "0.96.14",
+  "enabled": false,
+  "profileId": "vtcode",
+  "dist": {
+    "kind": "binary",
+    "archive": "https://github.com/vinhnx/VTCode/releases/download/0.96.14/vtcode-0.96.14-x86_64-unknown-linux-gnu.tar.gz",
+    "sha256": "37857dab5c9f758d8a7d2e409feca12ca508682be049c47786f45a5517e438ed",
+    "cmd": "./vtcode",
+    "args": [
+      "acp"
+    ],
+    "env": {
+      "VT_ACP_ENABLED": "1",
+      "VT_ACP_ZED_ENABLED": "1"
+    }
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

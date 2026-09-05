@@ -1,0 +1,39 @@
+{
+  "id": "antigravity-acp",
+  "name": "Google Antigravity",
+  "version": "1.1.1",
+  "enabled": false,
+  "profileId": "antigravity-acp",
+  "dist": {
+    "kind": "binary",
+    "archive": "https://dl.google.com/agy-extensions/releases/linux/agy-acp-server-agy_acp_server_1.1.1-linux-x86_64.zip",
+    "sha256": "38f62d01b32deb0907b3d39a71ec301fd36369f6ffd1cf262d4af385177f79df",
+    "cmd": "./agy_acp_server.par",
+    "args": [
+      "--uid="
+    ]
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

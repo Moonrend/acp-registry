@@ -1,0 +1,34 @@
+{
+  "id": "sigit",
+  "name": "siGit Code",
+  "version": "1.5.2",
+  "enabled": false,
+  "profileId": "sigit",
+  "dist": {
+    "kind": "npx",
+    "package": "@smbcloud/sigit@1.5.2"
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

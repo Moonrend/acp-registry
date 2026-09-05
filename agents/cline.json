@@ -1,0 +1,37 @@
+{
+  "id": "cline",
+  "name": "Cline",
+  "version": "3.0.61",
+  "enabled": false,
+  "profileId": "cline",
+  "dist": {
+    "kind": "npx",
+    "package": "cline@3.0.61",
+    "args": [
+      "--acp"
+    ]
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

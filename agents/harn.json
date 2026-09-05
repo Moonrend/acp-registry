@@ -1,0 +1,40 @@
+{
+  "id": "harn",
+  "name": "Harn",
+  "version": "0.10.129",
+  "enabled": false,
+  "profileId": "harn",
+  "dist": {
+    "kind": "binary",
+    "archive": "https://github.com/burin-labs/harn/releases/download/v0.10.129/harn-x86_64-unknown-linux-gnu.tar.gz",
+    "sha256": "0013659bb2d6cb6c275a1d04a9338fab2b5146a33a2b37b725f96aec84bf1da9",
+    "cmd": "./harn",
+    "args": [
+      "serve",
+      "acp"
+    ]
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

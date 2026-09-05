@@ -1,0 +1,40 @@
+{
+  "id": "fast-agent",
+  "name": "fast-agent",
+  "version": "0.10.1",
+  "enabled": false,
+  "profileId": "fast-agent",
+  "dist": {
+    "kind": "uvx",
+    "package": "fast-agent-acp==0.10.1",
+    "args": [
+      "-x"
+    ],
+    "env": {
+      "FAST_AGENT_MODEL": "codexplan"
+    }
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

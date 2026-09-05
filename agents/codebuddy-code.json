@@ -1,0 +1,37 @@
+{
+  "id": "codebuddy-code",
+  "name": "Codebuddy Code",
+  "version": "2.144.0",
+  "enabled": false,
+  "profileId": "codebuddy",
+  "dist": {
+    "kind": "npx",
+    "package": "@tencent-ai/codebuddy-code@2.144.0",
+    "args": [
+      "--acp"
+    ]
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "id": "glm-acp-agent",
+  "name": "GLM Agent",
+  "version": "1.8.0",
+  "enabled": false,
+  "profileId": "glm-acp-agent",
+  "dist": {
+    "kind": "npx",
+    "package": "glm-acp-agent@1.8.0"
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

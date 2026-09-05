@@ -1,0 +1,36 @@
+{
+  "id": "corust-agent",
+  "name": "Corust Agent",
+  "version": "0.6.0",
+  "enabled": false,
+  "profileId": "corust-agent",
+  "dist": {
+    "kind": "binary",
+    "archive": "https://github.com/Corust-ai/corust-agent-release/releases/download/v0.6.0/agent-linux-x64.tar.gz",
+    "sha256": "2a2e42572b317c83d38f3c373ef5f417e83b0ccabf2fb43ff2aa038ab9f73ba2",
+    "cmd": "./corust-agent-acp"
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

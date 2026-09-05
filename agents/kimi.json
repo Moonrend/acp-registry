@@ -1,0 +1,27 @@
+{
+  "id": "kimi",
+  "name": "Kimi CLI",
+  "version": "1.50.0",
+  "enabled": false,
+  "profileId": "kimi-code",
+  "dist": {
+    "kind": "binary",
+    "archive": "https://github.com/MoonshotAI/kimi-cli/releases/download/1.50.0/kimi-1.50.0-x86_64-unknown-linux-gnu.tar.gz",
+    "sha256": "10ccaa26ee7f5bb43f7c05baf808c11cd0160710b07ac422382d1d1923f3dab6",
+    "cmd": "./kimi",
+    "args": [
+      "acp"
+    ]
+  },
+  "storage": {
+    "mode": "state-home",
+    "xdg": true,
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

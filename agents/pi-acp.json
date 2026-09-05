@@ -1,0 +1,22 @@
+{
+  "id": "pi-acp",
+  "name": "pi ACP",
+  "version": "0.0.33",
+  "enabled": false,
+  "profileId": "pi",
+  "dist": {
+    "kind": "npx",
+    "package": "pi-acp@0.0.33"
+  },
+  "storage": {
+    "mode": "state-home",
+    "xdg": true,
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

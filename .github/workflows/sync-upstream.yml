@@ -1,0 +1,46 @@
+name: sync-upstream
+
+# Checks the upstream ACP registry once a day and opens a PR when an agent
+# ships a new version. Checksums for binary agents are re-pinned automatically.
+on:
+  schedule:
+    - cron: "17 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Apply upstream updates
+        id: sync
+        run: |
+          node tools/sync-upstream.mjs --write | tee /tmp/sync.log
+          node tools/build-index.mjs
+          if git diff --quiet; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Validate updated declarations
+        if: steps.sync.outputs.changed == 'true'
+        run: node tools/validate.mjs
+
+      - name: Open pull request
+        if: steps.sync.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: chore/sync-upstream
+          title: "chore: sync ACP agent versions from upstream"
+          commit-message: "chore: sync ACP agent versions from upstream"
+          body-path: /tmp/sync.log
+          delete-branch: true

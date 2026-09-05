@@ -1,0 +1,52 @@
+{
+  "id": "codex-acp",
+  "name": "Codex",
+  "version": "1.10.0",
+  "enabled": false,
+  "profileId": "codex",
+  "dist": {
+    "kind": "npx",
+    "package": "@agentclientprotocol/codex-acp@1.10.0"
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}",
+      "CODEX_HOME": "${STATE_DIR}",
+      "CODEX_SQLITE_HOME": "${STATE_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".codex/auth.json",
+        "runtime": "auth.json",
+        "sync": "codex_auth",
+        "when": [
+          "self",
+          "oauth"
+        ]
+      },
+      {
+        "durable": ".codex/config.toml",
+        "runtime": "config.toml",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": false
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "oauth",
+      "api_key"
+    ],
+    "apiKeyEnv": [
+      "OPENAI_API_KEY"
+    ],
+    "noBrowserEnv": {
+      "NO_BROWSER": "1"
+    }
+  }
+}

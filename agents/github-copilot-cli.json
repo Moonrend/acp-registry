@@ -1,0 +1,25 @@
+{
+  "id": "github-copilot-cli",
+  "name": "GitHub Copilot",
+  "version": "1.0.83",
+  "enabled": false,
+  "profileId": "copilot",
+  "dist": {
+    "kind": "npx",
+    "package": "@github/copilot@1.0.83",
+    "args": [
+      "--acp"
+    ]
+  },
+  "storage": {
+    "mode": "state-home",
+    "xdg": true,
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

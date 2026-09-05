@@ -1,0 +1,39 @@
+{
+  "id": "devin",
+  "name": "Devin",
+  "version": "3000.6.14",
+  "enabled": false,
+  "profileId": "devin",
+  "dist": {
+    "kind": "binary",
+    "archive": "https://static.devin.ai/cli/3000.6.14/devin-3000.6.14-x86_64-unknown-linux.tar.gz",
+    "sha256": "28cf64c1df9f58ccd063fb7e6fd6e9391073c585b733449371485e1ef8a3e6db",
+    "cmd": "./bin/devin",
+    "args": [
+      "acp"
+    ]
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": true
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}

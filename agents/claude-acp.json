@@ -1,0 +1,67 @@
+{
+  "id": "claude-acp",
+  "name": "Claude Agent",
+  "version": "0.74.0",
+  "enabled": true,
+  "profileId": "claude-code",
+  "dist": {
+    "kind": "npx",
+    "package": "@agentclientprotocol/claude-agent-acp@0.74.0"
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${RUNTIME_DIR}",
+      "CLAUDE_CONFIG_DIR": "${STATE_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".claude/.credentials.json",
+        "runtime": ".credentials.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      },
+      {
+        "durable": ".claude/settings.json",
+        "runtime": "settings.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      },
+      {
+        "durable": ".claude/settings.local.json",
+        "runtime": "settings.local.json",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      },
+      {
+        "durable": ".claude/CLAUDE.md",
+        "runtime": "CLAUDE.md",
+        "sync": "exit",
+        "when": [
+          "self"
+        ]
+      },
+      {
+        "durable": ".claude.json",
+        "runtime": ".claude.json",
+        "sync": "none",
+        "when": [
+          "self"
+        ]
+      }
+    ],
+    "skipWhenApiKey": false
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
+    ]
+  }
+}
