@@ -55,8 +55,7 @@
           "self"
         ]
       }
-    ],
-    "skipWhenApiKey": false
+    ]
   },
   "auth": {
     "modes": [

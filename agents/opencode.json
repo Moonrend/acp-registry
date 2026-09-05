@@ -16,7 +16,25 @@
   "storage": {
     "mode": "state-home",
     "xdg": true,
-    "skipWhenApiKey": true
+    "artifacts": [
+      {
+        "durable": "home",
+        "runtime": "home",
+        "sync": "exit",
+        "when": [
+          "self",
+          "oauth"
+        ]
+      },
+      {
+        "durable": "home",
+        "runtime": "home",
+        "sync": "none",
+        "when": [
+          "api_key"
+        ]
+      }
+    ]
   },
   "auth": {
     "modes": [

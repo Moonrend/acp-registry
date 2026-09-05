@@ -26,15 +26,31 @@
         ]
       },
       {
+        "durable": ".codex/auth.json",
+        "runtime": "auth.json",
+        "sync": "none",
+        "when": [
+          "api_key"
+        ]
+      },
+      {
         "durable": ".codex/config.toml",
         "runtime": "config.toml",
         "sync": "exit",
         "when": [
           "self"
         ]
+      },
+      {
+        "durable": ".codex/config.toml",
+        "runtime": "config.toml",
+        "sync": "none",
+        "when": [
+          "oauth",
+          "api_key"
+        ]
       }
-    ],
-    "skipWhenApiKey": false
+    ]
   },
   "auth": {
     "modes": [

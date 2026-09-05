@@ -4,7 +4,13 @@
   "title": "ACP agent declaration",
   "description": "One file per ACP agent. Declares everything a host needs to build the image, launch the adapter, and persist its credentials. Hosts must not carry per-agent knowledge outside this file.",
   "type": "object",
-  "required": ["id", "name", "version", "dist", "storage"],
+  "required": [
+    "id",
+    "name",
+    "version",
+    "dist",
+    "storage"
+  ],
   "additionalProperties": false,
   "properties": {
     "id": {
@@ -12,15 +18,25 @@
       "pattern": "^[a-z0-9][a-z0-9-]*$",
       "description": "Registry id. Also the image name: ghcr.io/moonrend/acp-registry/<id>."
     },
-    "name": { "type": "string", "description": "Human-readable display name." },
-    "version": { "type": "string", "description": "Upstream version pinned by this declaration." },
+    "name": {
+      "type": "string",
+      "description": "Human-readable display name."
+    },
+    "version": {
+      "type": "string",
+      "description": "Upstream version pinned by this declaration."
+    },
     "enabled": {
       "type": "boolean",
       "default": false,
       "description": "Whether CI builds and publishes this agent by default."
     },
-    "homepage": { "type": "string" },
-    "description": { "type": "string" },
+    "homepage": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
     "profileId": {
       "type": "string",
       "description": "Stable host-side profile id. Replaces the host's hardcoded profile->registry map."
@@ -28,31 +44,72 @@
     "dist": {
       "type": "object",
       "description": "How to install the adapter into the image.",
-      "required": ["kind"],
+      "required": [
+        "kind"
+      ],
       "additionalProperties": false,
       "properties": {
-        "kind": { "enum": ["npx", "uvx", "binary"] },
-        "package": { "type": "string", "description": "npx/uvx package spec, e.g. name@1.2.3." },
-        "archive": { "type": "string", "description": "binary: download URL." },
-        "sha256": { "type": "string", "description": "binary: checksum, verified at build time." },
-        "cmd": { "type": "string", "description": "Executable name inside the archive." },
-        "args": { "type": "array", "items": { "type": "string" }, "default": [] },
-        "env": { "type": "object", "additionalProperties": { "type": "string" }, "default": {} }
+        "kind": {
+          "enum": [
+            "npx",
+            "uvx",
+            "binary"
+          ]
+        },
+        "package": {
+          "type": "string",
+          "description": "npx/uvx package spec, e.g. name@1.2.3."
+        },
+        "archive": {
+          "type": "string",
+          "description": "binary: download URL."
+        },
+        "sha256": {
+          "type": "string",
+          "description": "binary: checksum, verified at build time."
+        },
+        "cmd": {
+          "type": "string",
+          "description": "Executable name inside the archive."
+        },
+        "args": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": []
+        },
+        "env": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "default": {}
+        }
       }
     },
     "storage": {
       "type": "object",
       "description": "Unified credential/config persistence contract. Replaces per-agent branches in the host.",
-      "required": ["mode"],
+      "required": [
+        "mode"
+      ],
       "additionalProperties": false,
       "properties": {
         "mode": {
-          "enum": ["home", "state-home", "files", "none"],
+          "enum": [
+            "home",
+            "state-home",
+            "files",
+            "none"
+          ],
           "description": "home: persist whole $HOME. state-home: persist $HOME under a state dir with XDG vars. files: persist an explicit file list. none: stateless."
         },
         "env": {
           "type": "object",
-          "additionalProperties": { "type": "string" },
+          "additionalProperties": {
+            "type": "string"
+          },
           "description": "Extra env for the adapter process. ${STATE_DIR}/${RUNTIME_DIR}/${HOME_DIR} are expanded by the host."
         },
         "xdg": {
@@ -65,28 +122,42 @@
           "description": "mode=files: explicit durable<->runtime file mappings.",
           "items": {
             "type": "object",
-            "required": ["durable", "runtime"],
+            "required": [
+              "durable",
+              "runtime"
+            ],
             "additionalProperties": false,
             "properties": {
-              "durable": { "type": "string", "description": "Path relative to the durable root." },
-              "runtime": { "type": "string", "description": "Path relative to the runtime state dir." },
+              "durable": {
+                "type": "string",
+                "description": "Path relative to the durable root."
+              },
+              "runtime": {
+                "type": "string",
+                "description": "Path relative to the runtime state dir."
+              },
               "sync": {
-                "enum": ["none", "exit", "codex_auth"],
+                "enum": [
+                  "none",
+                  "exit",
+                  "codex_auth"
+                ],
                 "default": "exit",
                 "description": "When to copy the runtime copy back to durable storage."
               },
               "when": {
                 "type": "array",
-                "items": { "enum": ["self", "oauth", "api_key"] },
+                "items": {
+                  "enum": [
+                    "self",
+                    "oauth",
+                    "api_key"
+                  ]
+                },
                 "description": "Only apply this artifact for these setup modes. Omit for all modes."
               }
             }
           }
-        },
-        "skipWhenApiKey": {
-          "type": "boolean",
-          "default": true,
-          "description": "Skip persistence entirely in api_key mode, where there is no login state worth keeping."
         }
       }
     },
@@ -97,17 +168,29 @@
       "properties": {
         "modes": {
           "type": "array",
-          "items": { "enum": ["self", "oauth", "api_key"] },
-          "default": ["self"]
+          "items": {
+            "enum": [
+              "self",
+              "oauth",
+              "api_key"
+            ]
+          },
+          "default": [
+            "self"
+          ]
         },
         "apiKeyEnv": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "description": "Env var names accepted for api_key mode."
         },
         "noBrowserEnv": {
           "type": "object",
-          "additionalProperties": { "type": "string" },
+          "additionalProperties": {
+            "type": "string"
+          },
           "description": "Env applied during oauth to force device-code instead of opening a browser."
         }
       }

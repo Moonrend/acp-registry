@@ -18,7 +18,7 @@ const manifest = JSON.parse(
 const REGISTRY_BY_PROFILE = {
   "claude-code": "claude-acp",
   codex: "codex-acp",
-  gemini: "gemini",
+  "gemini-cli": "gemini",
   opencode: "opencode",
   copilot: "github-copilot-cli",
   "qwen-code": "qwen-code",

@@ -59,7 +59,9 @@ for (const a of agents) {
     if (!Array.isArray(s.artifacts) || s.artifacts.length === 0) {
       fail(a.id, "storage.mode=files requires a non-empty artifacts list");
     }
-    for (const art of s.artifacts ?? []) {
+  }
+  if (Array.isArray(s.artifacts)) {
+    for (const art of s.artifacts) {
       for (const p of [art.durable, art.runtime]) {
         // Persisted paths are joined onto host directories; a traversal here
         // would let a declaration write outside its own volume.
@@ -68,8 +70,8 @@ for (const a of agents) {
         }
       }
     }
-  } else if (s.artifacts) {
-    fail(a.id, `storage.artifacts is only valid when mode=files (got ${s.mode})`);
+  } else if (s.artifacts && (s.mode === "none")) {
+    fail(a.id, `storage.artifacts is meaningless when mode=none`);
   }
 
   if (a.profileId) {

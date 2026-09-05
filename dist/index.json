@@ -26,8 +26,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -60,8 +59,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -94,8 +92,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -128,8 +125,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -162,8 +158,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -229,8 +224,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": false
+        ]
       },
       "auth": {
         "modes": [
@@ -263,8 +257,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -297,8 +290,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -335,15 +327,31 @@
             ]
           },
           {
+            "durable": ".codex/auth.json",
+            "runtime": "auth.json",
+            "sync": "none",
+            "when": [
+              "api_key"
+            ]
+          },
+          {
             "durable": ".codex/config.toml",
             "runtime": "config.toml",
             "sync": "exit",
             "when": [
               "self"
             ]
+          },
+          {
+            "durable": ".codex/config.toml",
+            "runtime": "config.toml",
+            "sync": "none",
+            "when": [
+              "oauth",
+              "api_key"
+            ]
           }
-        ],
-        "skipWhenApiKey": false
+        ]
       },
       "auth": {
         "modes": [
@@ -383,8 +391,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -417,8 +424,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -451,8 +457,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -485,8 +490,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -519,8 +523,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -553,8 +556,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -587,8 +589,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -621,8 +622,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -655,8 +655,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -689,8 +688,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -704,7 +702,7 @@
       "name": "Gemini CLI",
       "version": "0.58.0",
       "enabled": true,
-      "profileId": "gemini",
+      "profileId": "gemini-cli",
       "image": "ghcr.io/moonrend/acp-registry/gemini:0.58.0",
       "dist": {
         "kind": "npx"
@@ -723,8 +721,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -746,7 +743,17 @@
       "storage": {
         "mode": "state-home",
         "xdg": true,
-        "skipWhenApiKey": true
+        "artifacts": [
+          {
+            "durable": "home",
+            "runtime": "home",
+            "sync": "exit",
+            "when": [
+              "self",
+              "oauth"
+            ]
+          }
+        ]
       },
       "auth": {
         "modes": [
@@ -779,8 +786,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -813,8 +819,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -836,7 +841,17 @@
       "storage": {
         "mode": "state-home",
         "xdg": true,
-        "skipWhenApiKey": true
+        "artifacts": [
+          {
+            "durable": "home",
+            "runtime": "home",
+            "sync": "exit",
+            "when": [
+              "self",
+              "oauth"
+            ]
+          }
+        ]
       },
       "auth": {
         "modes": [
@@ -869,8 +884,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -903,8 +917,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -937,8 +950,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -960,7 +972,17 @@
       "storage": {
         "mode": "state-home",
         "xdg": true,
-        "skipWhenApiKey": true
+        "artifacts": [
+          {
+            "durable": "home",
+            "runtime": "home",
+            "sync": "exit",
+            "when": [
+              "self",
+              "oauth"
+            ]
+          }
+        ]
       },
       "auth": {
         "modes": [
@@ -993,8 +1015,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -1027,8 +1048,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -1061,8 +1081,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -1084,7 +1103,25 @@
       "storage": {
         "mode": "state-home",
         "xdg": true,
-        "skipWhenApiKey": true
+        "artifacts": [
+          {
+            "durable": "home",
+            "runtime": "home",
+            "sync": "exit",
+            "when": [
+              "self",
+              "oauth"
+            ]
+          },
+          {
+            "durable": "home",
+            "runtime": "home",
+            "sync": "none",
+            "when": [
+              "api_key"
+            ]
+          }
+        ]
       },
       "auth": {
         "modes": [
@@ -1106,7 +1143,17 @@
       "storage": {
         "mode": "state-home",
         "xdg": true,
-        "skipWhenApiKey": true
+        "artifacts": [
+          {
+            "durable": "home",
+            "runtime": "home",
+            "sync": "exit",
+            "when": [
+              "self",
+              "oauth"
+            ]
+          }
+        ]
       },
       "auth": {
         "modes": [
@@ -1139,8 +1186,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -1173,8 +1219,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -1207,8 +1252,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -1241,8 +1285,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -1275,8 +1318,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -1309,8 +1351,7 @@
               "self"
             ]
           }
-        ],
-        "skipWhenApiKey": true
+        ]
       },
       "auth": {
         "modes": [
@@ -1320,5 +1361,5 @@
       }
     }
   ],
-  "digest": "af49cf977505a44a"
+  "digest": "24275e1e08b370cd"
 }

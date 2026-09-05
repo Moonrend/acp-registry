@@ -27,8 +27,7 @@
           "self"
         ]
       }
-    ],
-    "skipWhenApiKey": true
+    ]
   },
   "auth": {
     "modes": [

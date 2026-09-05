@@ -3,7 +3,7 @@
   "name": "Gemini CLI",
   "version": "0.58.0",
   "enabled": true,
-  "profileId": "gemini",
+  "profileId": "gemini-cli",
   "dist": {
     "kind": "npx",
     "package": "@google/gemini-cli@0.58.0",
@@ -25,8 +25,7 @@
           "self"
         ]
       }
-    ],
-    "skipWhenApiKey": true
+    ]
   },
   "auth": {
     "modes": [
