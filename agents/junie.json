@@ -31,8 +31,7 @@
   },
   "auth": {
     "modes": [
-      "self",
-      "api_key"
+      "self"
     ]
   }
 }

@@ -29,6 +29,7 @@
   "auth": {
     "modes": [
       "self",
+      "oauth",
       "api_key"
     ]
   }
