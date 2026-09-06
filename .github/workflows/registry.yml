@@ -112,7 +112,14 @@ jobs:
         agent: ${{ fromJSON(needs.matrix.outputs.agents) }}
     env:
       # Pull requests validate only; every other trigger publishes.
-      PUSH: ${{ github.event_name != 'pull_request' && inputs.push != false }}
+      #
+      # `inputs.push` is null unless the run came from workflow_dispatch, and
+      # GitHub casts null and false to 0 in comparisons -- so `inputs.push !=
+      # false` is FALSE on ordinary pushes and silently disables publishing.
+      # Only consult the input on the event that actually supplies it.
+      PUSH: >-
+        ${{ github.event_name != 'pull_request'
+            && (github.event_name != 'workflow_dispatch' || inputs.push) }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
