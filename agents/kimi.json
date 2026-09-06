@@ -2,7 +2,6 @@
   "id": "kimi",
   "name": "Kimi CLI",
   "version": "1.50.0",
-  "enabled": false,
   "profileId": "kimi-code",
   "dist": {
     "kind": "binary",

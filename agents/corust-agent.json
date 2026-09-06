@@ -2,7 +2,6 @@
   "id": "corust-agent",
   "name": "Corust Agent",
   "version": "0.6.0",
-  "enabled": false,
   "profileId": "corust-agent",
   "dist": {
     "kind": "binary",

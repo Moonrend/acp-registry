@@ -2,7 +2,6 @@
   "id": "deepagents",
   "name": "DeepAgents",
   "version": "0.1.7",
-  "enabled": false,
   "profileId": "deepagents",
   "dist": {
     "kind": "npx",

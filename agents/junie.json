@@ -2,7 +2,6 @@
   "id": "junie",
   "name": "Junie",
   "version": "3123.7.0",
-  "enabled": false,
   "profileId": "junie",
   "dist": {
     "kind": "binary",

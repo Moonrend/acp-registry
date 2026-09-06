@@ -2,7 +2,6 @@
   "id": "autohand",
   "name": "Autohand Code",
   "version": "0.2.1",
-  "enabled": false,
   "profileId": "autohand",
   "dist": {
     "kind": "npx",

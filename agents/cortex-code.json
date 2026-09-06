@@ -2,7 +2,6 @@
   "id": "cortex-code",
   "name": "Cortex Code",
   "version": "1.0.73",
-  "enabled": false,
   "profileId": "cortex-code",
   "dist": {
     "kind": "binary",

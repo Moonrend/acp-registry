@@ -2,7 +2,6 @@
   "id": "glm-acp-agent",
   "name": "GLM Agent",
   "version": "1.8.0",
-  "enabled": false,
   "profileId": "glm-acp-agent",
   "dist": {
     "kind": "npx",

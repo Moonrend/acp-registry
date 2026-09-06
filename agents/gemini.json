@@ -2,7 +2,6 @@
   "id": "gemini",
   "name": "Gemini CLI",
   "version": "0.58.0",
-  "enabled": true,
   "profileId": "gemini-cli",
   "dist": {
     "kind": "npx",

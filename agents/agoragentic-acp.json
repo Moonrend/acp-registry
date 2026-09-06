@@ -2,7 +2,6 @@
   "id": "agoragentic-acp",
   "name": "Agoragentic",
   "version": "1.3.0",
-  "enabled": false,
   "profileId": "agoragentic-acp",
   "dist": {
     "kind": "npx",

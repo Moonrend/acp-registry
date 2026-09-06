@@ -2,7 +2,6 @@
   "id": "kilo",
   "name": "Kilo",
   "version": "7.5.14",
-  "enabled": false,
   "profileId": "kilo",
   "dist": {
     "kind": "npx",

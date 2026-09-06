@@ -2,7 +2,6 @@
   "id": "factory-droid",
   "name": "Factory Droid",
   "version": "0.212.1",
-  "enabled": false,
   "profileId": "factory-droid",
   "dist": {
     "kind": "npx",

@@ -2,7 +2,6 @@
   "id": "claude-acp",
   "name": "Claude Agent",
   "version": "0.74.0",
-  "enabled": true,
   "profileId": "claude-code",
   "dist": {
     "kind": "npx",

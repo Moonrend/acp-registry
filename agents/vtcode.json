@@ -2,7 +2,6 @@
   "id": "vtcode",
   "name": "VT Code",
   "version": "0.96.14",
-  "enabled": false,
   "profileId": "vtcode",
   "dist": {
     "kind": "binary",

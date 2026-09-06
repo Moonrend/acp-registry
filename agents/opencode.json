@@ -2,7 +2,6 @@
   "id": "opencode",
   "name": "OpenCode",
   "version": "1.18.29",
-  "enabled": true,
   "profileId": "opencode",
   "dist": {
     "kind": "binary",

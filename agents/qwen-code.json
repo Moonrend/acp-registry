@@ -2,7 +2,6 @@
   "id": "qwen-code",
   "name": "Qwen Code",
   "version": "0.23.0",
-  "enabled": true,
   "profileId": "qwen-code",
   "dist": {
     "kind": "npx",

@@ -2,7 +2,6 @@
   "id": "stakpak",
   "name": "Stakpak",
   "version": "0.3.88",
-  "enabled": false,
   "profileId": "stakpak",
   "dist": {
     "kind": "binary",

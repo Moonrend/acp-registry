@@ -2,7 +2,6 @@
   "id": "dimcode",
   "name": "DimCode",
   "version": "0.3.28",
-  "enabled": false,
   "profileId": "dimcode",
   "dist": {
     "kind": "npx",

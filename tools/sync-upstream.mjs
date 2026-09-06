@@ -4,7 +4,7 @@
 //   node tools/sync-upstream.mjs --write   # apply version/dist updates
 //   node tools/sync-upstream.mjs --check   # exit 1 on drift (CI)
 //
-// Local policy fields (enabled, profileId, storage, auth) are never touched;
+// Local policy fields (profileId, storage, auth) are never touched;
 // only upstream-owned facts (version, package, archive, cmd, args) move.
 import fs from "node:fs";
 import path from "node:path";
@@ -44,12 +44,12 @@ const warnings = [];
 for (const agent of local) {
   const up = byId.get(agent.id);
   if (!up) {
-    // An enabled agent vanishing upstream is a real problem: we would keep
-    // publishing an image nobody maintains.
-    (agent.enabled ? changes : warnings).push({
+    // Every declaration is published, so any agent vanishing upstream means we
+    // would keep shipping an image nobody maintains.
+    changes.push({
       id: agent.id,
       kind: "missing-upstream",
-      detail: `no longer present in upstream registry${agent.enabled ? " (ENABLED!)" : ""}`,
+      detail: "no longer present in upstream registry",
     });
     continue;
   }

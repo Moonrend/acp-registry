@@ -2,7 +2,6 @@
   "id": "amp-acp",
   "name": "Amp",
   "version": "0.9.0",
-  "enabled": false,
   "profileId": "amp",
   "dist": {
     "kind": "binary",

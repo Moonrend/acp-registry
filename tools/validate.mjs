@@ -88,5 +88,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-const enabled = agents.filter((a) => a.enabled).length;
-console.log(`✓ ${agents.length} declarations valid (${enabled} enabled)`);
+console.log(`✓ ${agents.length} declarations valid`);

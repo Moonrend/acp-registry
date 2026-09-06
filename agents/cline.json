@@ -2,7 +2,6 @@
   "id": "cline",
   "name": "Cline",
   "version": "3.0.61",
-  "enabled": false,
   "profileId": "cline",
   "dist": {
     "kind": "npx",

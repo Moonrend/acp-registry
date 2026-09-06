@@ -18,7 +18,6 @@ const index = {
     id: a.id,
     name: a.name,
     version: a.version,
-    enabled: Boolean(a.enabled),
     profileId: a.profileId ?? a.id,
     image: imageRef(a),
     dist: { kind: a.dist.kind },

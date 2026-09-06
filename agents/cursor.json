@@ -2,7 +2,6 @@
   "id": "cursor",
   "name": "Cursor",
   "version": "2026.09.02",
-  "enabled": false,
   "profileId": "cursor",
   "dist": {
     "kind": "binary",

@@ -2,7 +2,6 @@
   "id": "codex-acp",
   "name": "Codex",
   "version": "1.10.0",
-  "enabled": false,
   "profileId": "codex",
   "dist": {
     "kind": "npx",

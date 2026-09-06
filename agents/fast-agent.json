@@ -2,7 +2,6 @@
   "id": "fast-agent",
   "name": "fast-agent",
   "version": "0.10.1",
-  "enabled": false,
   "profileId": "fast-agent",
   "dist": {
     "kind": "uvx",

@@ -2,7 +2,6 @@
   "id": "mistral-vibe",
   "name": "Mistral Vibe",
   "version": "2.24.1",
-  "enabled": false,
   "profileId": "mistral-vibe",
   "dist": {
     "kind": "binary",

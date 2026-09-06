@@ -2,7 +2,6 @@
   "id": "harn",
   "name": "Harn",
   "version": "0.10.129",
-  "enabled": false,
   "profileId": "harn",
   "dist": {
     "kind": "binary",

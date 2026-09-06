@@ -2,7 +2,6 @@
   "id": "sigit",
   "name": "siGit Code",
   "version": "1.5.2",
-  "enabled": false,
   "profileId": "sigit",
   "dist": {
     "kind": "npx",

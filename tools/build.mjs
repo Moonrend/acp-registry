@@ -3,10 +3,10 @@
 // initialize handshake, optionally pushes, and can delete locally afterwards so
 // a full 39-agent run fits on a small disk.
 //
-//   node tools/build.mjs                 # enabled agents, build + smoke
-//   node tools/build.mjs --all           # every declaration
-//   node tools/build.mjs --only a,b      # explicit ids (ignores enabled)
-//   node tools/build.mjs --push --prune  # publish, then reclaim disk
+//   node tools/build.mjs                 # every agent: build, smoke, push
+//   node tools/build.mjs --only a,b      # restrict to explicit ids
+//   node tools/build.mjs --no-push       # local build only (no publish)
+//   node tools/build.mjs --prune         # remove local tags after publish
 import { spawn } from "node:child_process";
 import path from "node:path";
 import { loadAgents, buildArgs, imageRef, ROOT } from "./lib.mjs";
@@ -18,9 +18,10 @@ const valueOf = (f) => {
   return i === -1 ? null : argv[i + 1];
 };
 
-const PUSH = has("--push");
+// Publishing is the default: an image that is built but never pushed is not
+// useful to any host. --no-push exists for local iteration.
+const PUSH = !has("--no-push");
 const PRUNE = has("--prune");
-const ALL = has("--all");
 const ONLY = (valueOf("--only") ?? "").split(",").map((s) => s.trim()).filter(Boolean);
 const SMOKE_TIMEOUT_MS = Number(valueOf("--smoke-timeout") ?? 90_000);
 
@@ -93,11 +94,7 @@ function smokeTest(ref) {
 }
 
 const all = loadAgents();
-const targets = ONLY.length
-  ? all.filter((a) => ONLY.includes(a.id))
-  : ALL
-    ? all
-    : all.filter((a) => a.enabled);
+const targets = ONLY.length ? all.filter((a) => ONLY.includes(a.id)) : all;
 
 if (ONLY.length) {
   const missing = ONLY.filter((id) => !all.some((a) => a.id === id));

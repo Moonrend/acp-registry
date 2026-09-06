@@ -2,7 +2,6 @@
   "id": "pi-acp",
   "name": "pi ACP",
   "version": "0.0.33",
-  "enabled": false,
   "profileId": "pi",
   "dist": {
     "kind": "npx",

@@ -2,7 +2,6 @@
   "id": "devin",
   "name": "Devin",
   "version": "3000.6.14",
-  "enabled": false,
   "profileId": "devin",
   "dist": {
     "kind": "binary",

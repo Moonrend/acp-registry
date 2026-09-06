@@ -2,7 +2,6 @@
   "id": "goose",
   "name": "goose",
   "version": "1.49.0",
-  "enabled": true,
   "profileId": "goose",
   "dist": {
     "kind": "binary",

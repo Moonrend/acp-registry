@@ -2,7 +2,6 @@
   "id": "codebuddy-code",
   "name": "Codebuddy Code",
   "version": "2.144.0",
-  "enabled": false,
   "profileId": "codebuddy",
   "dist": {
     "kind": "npx",

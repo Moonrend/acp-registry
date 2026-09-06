@@ -2,7 +2,6 @@
   "id": "minion-code",
   "name": "Minion Code",
   "version": "0.1.44",
-  "enabled": false,
   "profileId": "minion-code",
   "dist": {
     "kind": "uvx",

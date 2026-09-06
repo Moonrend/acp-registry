@@ -2,7 +2,6 @@
   "id": "grok-build",
   "name": "Grok Build",
   "version": "1.0.21",
-  "enabled": false,
   "profileId": "grok",
   "dist": {
     "kind": "npx",

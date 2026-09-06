@@ -144,7 +144,6 @@ for (const entry of manifest.images ?? manifest.agents ?? []) {
     id: entry.id,
     name: entry.name,
     version: entry.version,
-    enabled: Boolean(entry.enabled),
     profileId,
     dist,
     storage: storageFor(profileId),

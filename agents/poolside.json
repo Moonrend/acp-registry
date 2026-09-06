@@ -2,7 +2,6 @@
   "id": "poolside",
   "name": "Poolside",
   "version": "1.0.16",
-  "enabled": false,
   "profileId": "poolside",
   "dist": {
     "kind": "binary",

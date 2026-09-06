@@ -26,11 +26,6 @@
       "type": "string",
       "description": "Upstream version pinned by this declaration."
     },
-    "enabled": {
-      "type": "boolean",
-      "default": false,
-      "description": "Whether CI builds and publishes this agent by default."
-    },
     "homepage": {
       "type": "string"
     },

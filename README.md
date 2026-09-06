@@ -44,7 +44,6 @@ binaries that do not run against musl.
   "id": "codex-acp",
   "name": "Codex",
   "version": "1.10.0",
-  "enabled": true,
   "profileId": "codex",          // stable host-side id
   "dist": {                       // how to install
     "kind": "npx",               // npx | uvx | binary
@@ -79,9 +78,10 @@ node tools/validate.mjs         # schema + policy checks
 node tools/build-index.mjs      # regenerate dist/index.json
 node tools/build-index.mjs --check
 
-node tools/build.mjs                        # build + smoke-test enabled agents
-node tools/build.mjs --all --push --prune   # everything, publish, reclaim disk
+node tools/build.mjs               # every agent: build, smoke-test, push
+node tools/build.mjs --prune       # same, reclaiming disk after each push
 node tools/build.mjs --only cursor,goose
+node tools/build.mjs --no-push     # local build only
 
 node tools/sync-upstream.mjs            # report upstream drift
 node tools/sync-upstream.mjs --write    # apply and re-pin checksums
@@ -89,6 +89,10 @@ node tools/sync-upstream.mjs --write    # apply and re-pin checksums
 
 Every build runs a real ACP `initialize` handshake against the finished
 container; an image that does not answer fails the build.
+
+Publishing is the default: an image that is built but never pushed is of no
+use to a host. `--no-push` is for local iteration, and pull requests build
+without pushing because a PR must not overwrite a published tag.
 
 `--prune` removes each image after pushing, which is what makes a full
 39-agent run possible on a small disk.
@@ -99,7 +103,7 @@ container; an image that does not answer fails the build.
   `kind: binary` and verified at build time; validation refuses a declaration
   without one.
 - **Upstream drift is caught daily.** A scheduled workflow re-checks upstream,
-  re-pins checksums, and opens a PR. Local policy fields (`enabled`,
-  `profileId`, `storage`, `auth`) are never overwritten.
+  re-pins checksums, and opens a PR. Local policy fields (`profileId`,
+  `storage`, `auth`) are never overwritten.
 - **Artifact paths are sandboxed.** Absolute paths and `..` are rejected, so a
   declaration cannot write outside its own volume.

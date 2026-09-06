@@ -2,7 +2,6 @@
   "id": "qoder",
   "name": "Qoder CLI",
   "version": "0.2.14",
-  "enabled": false,
   "profileId": "qoder",
   "dist": {
     "kind": "npx",
