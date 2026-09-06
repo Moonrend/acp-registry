@@ -1,3 +1,1 @@
-# acp-registry
-
-For Zakura
+# Zakura Acp Registry
