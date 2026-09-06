@@ -53,8 +53,26 @@ install_uvx() {
   log "installing uv"
   curl -fsSL https://astral.sh/uv/install.sh | sh
   export PATH="/root/.local/bin:${PATH}"
-  log "uv tool install ${ACP_PACKAGE}"
-  uv tool install --python 3.12 "${ACP_PACKAGE}"
+  # ACP_CONSTRAINTS pins transitive deps the upstream package left unbounded.
+  # Python adapters commonly depend on `agent-client-protocol` with no upper
+  # bound, so a breaking release of that library breaks an otherwise-pinned
+  # adapter build (minion-code 0.1.44 imports acp.schema.AuthMethod, which was
+  # removed in agent-client-protocol 0.9.0). Each entry becomes a `--with`.
+  local extra=""
+  if [ -n "${ACP_CONSTRAINTS:-}" ]; then
+    # Newline-separated "pkg==ver" entries, emitted by the Dockerfile from JSON.
+    while IFS= read -r c; do
+      [ -n "${c}" ] || continue
+      extra="${extra} --with ${c}"
+      log "pinning dependency: ${c}"
+    done <<EOF
+$(printf '%s' "${ACP_CONSTRAINTS}" | tr ',' '\n')
+EOF
+  fi
+
+  log "uv tool install ${ACP_PACKAGE}${extra}"
+  # shellcheck disable=SC2086 # word splitting is intended for the --with pairs
+  uv tool install --python 3.12 "${ACP_PACKAGE}" ${extra}
   # uv puts shims in ~/.local/bin; expose them on the image PATH.
   for f in /root/.local/bin/*; do
     [ -x "$f" ] || continue
@@ -146,15 +164,39 @@ install_binary() {
 
   install -m 0755 "${found}" "${BIN_DIR}/${base}"
 
-  # Some archives ship sidecar files (shared libs, resources) next to the
-  # binary; copy the whole directory so those keep resolving.
-  local srcdir
+  # Some archives ship a whole application tree, not a lone executable, and the
+  # launcher resolves its runtime relative to its own location. Two shapes:
+  #
+  #   flat:   <dir>/{binary, libfoo.so, resources/}   -> payload sits beside it
+  #   nested: <root>/bin/binary + <root>/lib/...      -> payload is a SIBLING of
+  #                                                      the binary's directory
+  #
+  # Only checking the binary's own directory misses the nested shape entirely:
+  # junie's bin/ holds exactly one file, so a naive "more than one entry?" test
+  # copies the bare launcher and orphans its 409MB ../lib, after which the
+  # adapter exits 1 with no diagnostics. Anchor on the application ROOT instead:
+  # if the binary lives in a conventional bin/ dir, the parent is the root.
+  local srcdir approot
   srcdir="$(dirname "${found}")"
-  if [ "$(find "${srcdir}" -mindepth 1 -maxdepth 1 | wc -l)" -gt 1 ]; then
-    mkdir -p "${ACP_HOME}/lib/${ACP_ID}"
-    cp -a "${srcdir}/." "${ACP_HOME}/lib/${ACP_ID}/"
-    chmod 0755 "${ACP_HOME}/lib/${ACP_ID}/${base}"
-    ln -sf "${ACP_HOME}/lib/${ACP_ID}/${base}" "${BIN_DIR}/${base}"
+  approot="${srcdir}"
+  if [ "$(basename "${srcdir}")" = "bin" ]; then
+    approot="$(dirname "${srcdir}")"
+  fi
+
+  # Copy when the tree carries anything beyond the executable itself. Compare
+  # against the app root so both shapes above are covered by one rule.
+  if [ "$(find "${approot}" -mindepth 1 -maxdepth 1 | wc -l)" -gt 1 ]; then
+    local dest="${ACP_HOME}/lib/${ACP_ID}"
+    mkdir -p "${dest}"
+    cp -a "${approot}/." "${dest}/"
+
+    # The executable keeps its position WITHIN the copied tree, so relative
+    # lookups (../lib, ../resources) still resolve. Recompute its path rather
+    # than assuming it landed at the top level.
+    local rel_to_root="${found#${approot}/}"
+    local target="${dest}/${rel_to_root}"
+    chmod 0755 "${target}"
+    ln -sf "${target}" "${BIN_DIR}/${base}"
   fi
 
   # The entrypoint execs an absolute path, so the resolved location must be

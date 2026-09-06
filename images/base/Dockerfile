@@ -5,9 +5,15 @@
 # so N adapters cost `base + N * (adapter payload)` on disk and on the wire
 # instead of N full images. Rebuilding a single adapter never re-runs apt.
 #
-# Base is bookworm-slim (glibc), NOT alpine. Upstream registry binaries are
+# Base is a Debian slim (glibc), NOT alpine. Upstream registry binaries are
 # built for x86_64-unknown-linux-gnu and segfault or fail to link on musl.
-FROM node:22-bookworm-slim
+#
+# trixie, not bookworm: bookworm ships glibc 2.36, and several upstream
+# binaries are linked against newer symbols (sigit needs GLIBC_2.39,
+# corust-agent needs GLIBC_2.38), which fail at load time with
+# "version `GLIBC_2.3x' not found". trixie ships glibc 2.41 and satisfies
+# every published adapter today, so the whole fleet shares one base.
+FROM node:22-trixie-slim
 
 # ca-certificates: TLS to model APIs. git: agents that inspect repo state.
 # ripgrep: several agents shell out to `rg` for search.

@@ -8,6 +8,9 @@
     "package": "minion-code@0.1.44",
     "args": [
       "acp"
+    ],
+    "constraints": [
+      "agent-client-protocol==0.8.1"
     ]
   },
   "storage": {

@@ -80,6 +80,14 @@
             "type": "string"
           },
           "default": {}
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "uvx: pins for transitive deps upstream left unbounded, e.g. \"agent-client-protocol==0.8.1\". Needed when a breaking release of a shared library would otherwise break an already-pinned adapter.",
+          "default": []
         }
       }
     },
