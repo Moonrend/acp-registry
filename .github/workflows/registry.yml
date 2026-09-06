@@ -138,10 +138,10 @@ jobs:
       - name: Build and smoke-test ${{ matrix.agent }}
         run: |
           # Decide the flag in shell, not in a GitHub expression.
-          # `${{ cond && '' || '--no-push' }}` looks right but is a trap: when
-          # cond is true the middle operand is the empty string, which GitHub
-          # treats as falsy, so the `||` branch wins and --no-push is emitted
-          # even when publishing was intended.
+          # An expression of the form "cond AND empty-string OR --no-push"
+          # looks correct but is a trap: when cond is true the middle operand
+          # is the empty string, which GitHub treats as falsy, so the OR branch
+          # wins and --no-push is emitted even when publishing was intended.
           if [ "$PUSH" = "true" ]; then
             node tools/build.mjs --only "${{ matrix.agent }}"
           else
