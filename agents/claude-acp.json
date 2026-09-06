@@ -1,11 +1,11 @@
 {
   "id": "claude-acp",
   "name": "Claude Agent",
-  "version": "0.74.0",
+  "version": "0.75.1",
   "profileId": "claude-code",
   "dist": {
     "kind": "npx",
-    "package": "@agentclientprotocol/claude-agent-acp@0.74.0"
+    "package": "@agentclientprotocol/claude-agent-acp@0.75.1"
   },
   "storage": {
     "mode": "files",

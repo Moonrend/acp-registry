@@ -1,11 +1,11 @@
 {
   "id": "codebuddy-code",
   "name": "Codebuddy Code",
-  "version": "2.144.0",
+  "version": "2.146.0",
   "profileId": "codebuddy",
   "dist": {
     "kind": "npx",
-    "package": "@tencent-ai/codebuddy-code@2.144.0",
+    "package": "@tencent-ai/codebuddy-code@2.146.0",
     "args": [
       "--acp"
     ]

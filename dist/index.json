@@ -165,9 +165,9 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.74.0",
+      "version": "0.75.1",
       "profileId": "claude-code",
-      "image": "ghcr.io/moonrend/acp-registry/claude-acp:0.74.0",
+      "image": "ghcr.io/moonrend/acp-registry/claude-acp:0.75.1",
       "dist": {
         "kind": "npx"
       },
@@ -263,9 +263,9 @@
     {
       "id": "codebuddy-code",
       "name": "Codebuddy Code",
-      "version": "2.144.0",
+      "version": "2.146.0",
       "profileId": "codebuddy",
-      "image": "ghcr.io/moonrend/acp-registry/codebuddy-code:2.144.0",
+      "image": "ghcr.io/moonrend/acp-registry/codebuddy-code:2.146.0",
       "dist": {
         "kind": "npx"
       },
@@ -617,9 +617,9 @@
     {
       "id": "factory-droid",
       "name": "Factory Droid",
-      "version": "0.212.1",
+      "version": "0.213.0",
       "profileId": "factory-droid",
-      "image": "ghcr.io/moonrend/acp-registry/factory-droid:0.212.1",
+      "image": "ghcr.io/moonrend/acp-registry/factory-droid:0.213.0",
       "dist": {
         "kind": "npx"
       },
@@ -842,9 +842,9 @@
     {
       "id": "harn",
       "name": "Harn",
-      "version": "0.10.129",
+      "version": "0.10.131",
       "profileId": "harn",
-      "image": "ghcr.io/moonrend/acp-registry/harn:0.10.129",
+      "image": "ghcr.io/moonrend/acp-registry/harn:0.10.131",
       "dist": {
         "kind": "binary"
       },
@@ -905,9 +905,9 @@
     {
       "id": "kilo",
       "name": "Kilo",
-      "version": "7.5.14",
+      "version": "7.5.15",
       "profileId": "kilo",
-      "image": "ghcr.io/moonrend/acp-registry/kilo:7.5.14",
+      "image": "ghcr.io/moonrend/acp-registry/kilo:7.5.15",
       "dist": {
         "kind": "npx"
       },
@@ -1327,5 +1327,5 @@
       }
     }
   ],
-  "digest": "0aac197b945017dd"
+  "digest": "876942a0818be7dc"
 }

@@ -1,11 +1,11 @@
 {
   "id": "kilo",
   "name": "Kilo",
-  "version": "7.5.14",
+  "version": "7.5.15",
   "profileId": "kilo",
   "dist": {
     "kind": "npx",
-    "package": "@kilocode/cli@7.5.14",
+    "package": "@kilocode/cli@7.5.15",
     "args": [
       "acp"
     ]

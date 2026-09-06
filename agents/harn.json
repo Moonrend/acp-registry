@@ -1,7 +1,7 @@
 {
   "id": "harn",
   "name": "Harn",
-  "version": "0.10.129",
+  "version": "0.10.131",
   "profileId": "harn",
   "dist": {
     "kind": "binary",
