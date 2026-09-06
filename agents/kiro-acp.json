@@ -1,0 +1,31 @@
+{
+  "id": "kiro-acp",
+  "name": "Kiro CLI",
+  "version": "2.21.1",
+  "profileId": "kiro",
+  "homepage": "https://kiro.dev",
+  "description": "AWS Kiro CLI（kiro-cli acp）— 支持 AGENTS.md、Skills 与 MCP",
+  "dist": {
+    "kind": "binary",
+    "archive": "https://prod.download.cli.kiro.dev/stable/latest/kirocli-x86_64-linux.zip",
+    "sha256": "1f81a69b2a5d49fc74793d8805e6c31650b78e957ebcf54e90877a8e72f4b0a1",
+    "cmd": "kiro-cli",
+    "args": [
+      "acp"
+    ]
+  },
+  "storage": {
+    "mode": "state-home",
+    "xdg": true,
+    "artifacts": [
+      {
+        "durable": "home",
+        "runtime": "home",
+        "sync": "exit"
+      }
+    ]
+  },
+  "smoke": {
+    "loginRequiredPattern": "You are not logged in, please log in with kiro-cli login"
+  }
+}

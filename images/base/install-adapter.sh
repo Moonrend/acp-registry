@@ -80,10 +80,16 @@ EOF
   done
 
   # uv tool install prints nothing machine-readable, so derive the entrypoint
-  # from the tool's recorded receipt when possible, else fall back to the
-  # package name with the version spec stripped.
+  # from the declaration's `cmd` when present, else fall back to the package
+  # name with any extras ("pkg[extra]") and version spec stripped. Extras are
+  # not part of the console-script name, and a package's script often differs
+  # from its distribution name (hermes-agent[acp] ships `hermes-acp`).
   local name
-  name="$(printf '%s' "${ACP_PACKAGE}" | sed -E 's/[@>=<~!].*$//')"
+  if [ -n "${ACP_CMD:-}" ]; then
+    name="$(basename "${ACP_CMD#./}")"
+  else
+    name="$(printf '%s' "${ACP_PACKAGE}" | sed -E 's/\[[^]]*\]//; s/[@>=<~!].*$//')"
+  fi
   if command -v "${name}" >/dev/null 2>&1; then
     command -v "${name}" > "${ACP_HOME}/etc/cmdpath"
   else

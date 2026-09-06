@@ -1,0 +1,35 @@
+{
+  "id": "hermes-acp",
+  "name": "Hermes",
+  "version": "0.19.0",
+  "profileId": "hermes",
+  "homepage": "https://pypi.org/project/hermes-agent/",
+  "description": "Hermes Agent（hermes-acp）— 支持 MCP 的 Python 编码代理",
+  "dist": {
+    "kind": "uvx",
+    "package": "hermes-agent[acp]",
+    "version": "0.19.0",
+    "cmd": "hermes-acp"
+  },
+  "storage": {
+    "mode": "home",
+    "env": {
+      "HOME": "${HOME_DIR}",
+      "HERMES_HOME": "${HOME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": "home",
+        "runtime": "home",
+        "sync": "exit",
+        "when": ["self", "oauth"]
+      },
+      {
+        "durable": "home",
+        "runtime": "home",
+        "sync": "none",
+        "when": ["api_key"]
+      }
+    ]
+  }
+}

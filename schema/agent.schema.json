@@ -197,6 +197,17 @@
           "description": "Env applied during oauth to force device-code instead of opening a browser."
         }
       }
+    },
+    "smoke": {
+      "type": "object",
+      "description": "Build-time smoke test tuning. A few agents hard-require credentials before they will handshake; for those the build still proves the binary installed, launched and reported a recognisable login prompt.",
+      "additionalProperties": false,
+      "properties": {
+        "loginRequiredPattern": {
+          "type": "string",
+          "description": "Regex (JS syntax). When the agent answers `initialize` with a JSON-RPC error, or exits early, and the error message / stderr matches this pattern, the smoke test passes as 'login required'. Anything else — malformed output, an unrecognised crash, or silence — still fails. Keep the pattern narrow so real breakage is not masked."
+        }
+      }
     }
   }
 }

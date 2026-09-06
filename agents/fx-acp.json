@@ -1,0 +1,37 @@
+{
+  "id": "fx-acp",
+  "name": "fx",
+  "version": "0.0.7",
+  "profileId": "fx",
+  "homepage": "https://fx.sh",
+  "description": "fx CLI（fx acp）— Vercel AI Gateway 驱动的编码代理",
+  "dist": {
+    "kind": "binary",
+    "archive": "https://releases.fx.sh/v0.0.7/fx-linux-x86_64.tar.gz",
+    "sha256": "c5787ea041d3b5521ec675f1ada78f30cf1b11021ffcac48b4969cf5beb65c45",
+    "cmd": "fx",
+    "args": [
+      "acp"
+    ]
+  },
+  "storage": {
+    "mode": "files",
+    "env": {
+      "HOME": "${HOME_DIR}"
+    },
+    "artifacts": [
+      {
+        "durable": ".fx",
+        "runtime": ".fx",
+        "sync": "exit",
+        "when": [
+          "self",
+          "oauth"
+        ]
+      }
+    ]
+  },
+  "smoke": {
+    "loginRequiredPattern": "fx needs access to Vercel AI Gateway|Run fx login to sign in"
+  }
+}

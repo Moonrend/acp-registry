@@ -35,8 +35,17 @@ function run(cmd, args, opts = {}) {
 /**
  * Start the image and speak ACP over stdio. A container that exits 0 without
  * answering is still broken, so we require a well-formed initialize result.
+ *
+ * Some agents (fx, kiro) refuse to complete `initialize` until credentials
+ * exist, and they signal it differently: fx answers with a JSON-RPC error,
+ * while kiro-cli prints a plain-text notice and exits 1 without ever framing
+ * a response. For those the declaration sets `smoke.loginRequiredPattern`,
+ * and either shape passes *only* when the message matches that agent's own
+ * narrow pattern. An unrecognised error, a crash with different output, or
+ * silence still fails, so genuine breakage is not masked.
  */
-function smokeTest(ref) {
+function smokeTest(ref, loginRequiredPattern = null) {
+  const loginRe = loginRequiredPattern ? new RegExp(loginRequiredPattern, "i") : null;
   return new Promise((resolve) => {
     const p = spawn(
       "docker",
@@ -68,6 +77,10 @@ function smokeTest(ref) {
             return finish(true, `protocolVersion=${v}`);
           }
           if (msg.id === 1 && msg.error) {
+            const text = typeof msg.error?.message === "string" ? msg.error.message : JSON.stringify(msg.error);
+            if (loginRe?.test(text)) {
+              return finish(true, `login required: ${text.slice(0, 120)}`);
+            }
             return finish(false, `initialize error: ${JSON.stringify(msg.error).slice(0, 200)}`);
           }
         } catch {
@@ -77,7 +90,14 @@ function smokeTest(ref) {
     });
     p.stderr.on("data", (c) => { stderr += c.toString(); });
     p.on("error", (err) => finish(false, `spawn failed: ${err.message}`));
-    p.on("exit", (code) => finish(false, `exited early with code ${code}`));
+    p.on("exit", (code) => {
+      // Agents that cannot handshake before login may exit without ever
+      // framing a response; accept only their own recognised notice.
+      if (loginRe?.test(stderr)) {
+        return finish(true, `login required: ${stderr.trim().split("\n").pop()?.slice(0, 120)}`);
+      }
+      finish(false, `exited early with code ${code}`);
+    });
 
     p.stdin.write(
       `${JSON.stringify({
@@ -133,7 +153,7 @@ for (const [i, agent] of targets.entries()) {
   if (code !== 0) { results.push({ id: agent.id, stage: "build", ok: false }); continue; }
 
   process.stdout.write("  smoke: ");
-  const smoke = await smokeTest(ref);
+  const smoke = await smokeTest(ref, agent.smoke?.loginRequiredPattern ?? null);
   console.log(smoke.ok ? `ok (${smoke.reason})` : `FAILED (${smoke.reason})`);
   if (!smoke.ok && smoke.stderr) console.log(`  stderr tail: ${smoke.stderr.split("\n").slice(-4).join("\n  ")}`);
   if (!smoke.ok) { results.push({ id: agent.id, stage: "smoke", ok: false, reason: smoke.reason }); continue; }
