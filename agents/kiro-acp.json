@@ -25,6 +25,11 @@
       }
     ]
   },
+  "auth": {
+    "modes": [
+      "self"
+    ]
+  },
   "smoke": {
     "loginRequiredPattern": "You are not logged in, please log in with kiro-cli login"
   }

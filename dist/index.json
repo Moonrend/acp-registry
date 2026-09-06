@@ -706,7 +706,9 @@
       },
       "auth": {
         "modes": [
-          "self"
+          "self",
+          "oauth",
+          "api_key"
         ]
       }
     },
@@ -940,7 +942,8 @@
       },
       "auth": {
         "modes": [
-          "self"
+          "self",
+          "api_key"
         ]
       }
     },
@@ -1426,5 +1429,5 @@
       }
     }
   ],
-  "digest": "a8012fe184536666"
+  "digest": "b2bcc2af9ed90fdc"
 }

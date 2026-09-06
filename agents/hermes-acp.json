@@ -22,14 +22,25 @@
         "durable": "home",
         "runtime": "home",
         "sync": "exit",
-        "when": ["self", "oauth"]
+        "when": [
+          "self",
+          "oauth"
+        ]
       },
       {
         "durable": "home",
         "runtime": "home",
         "sync": "none",
-        "when": ["api_key"]
+        "when": [
+          "api_key"
+        ]
       }
+    ]
+  },
+  "auth": {
+    "modes": [
+      "self",
+      "api_key"
     ]
   }
 }

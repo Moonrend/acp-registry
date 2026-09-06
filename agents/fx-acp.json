@@ -31,6 +31,13 @@
       }
     ]
   },
+  "auth": {
+    "modes": [
+      "self",
+      "oauth",
+      "api_key"
+    ]
+  },
   "smoke": {
     "loginRequiredPattern": "fx needs access to Vercel AI Gateway|Run fx login to sign in"
   }
