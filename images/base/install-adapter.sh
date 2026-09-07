@@ -98,6 +98,19 @@ EOF
     exit 1
   fi
   log "resolved uvx bin: $(cat "${ACP_HOME}/etc/cmdpath")"
+
+  # uv keeps every downloaded wheel/sdist in ~/.cache/uv after installing, but
+  # the installed tool tree under ~/.local/share/uv is what actually runs, so
+  # the cache is pure build residue (~150MB per uvx image; hermes was 921MB).
+  # The npm branch already does the equivalent (`npm cache clean --force`).
+  #
+  # NOTE: we deliberately keep the uv binary itself. It looks build-only, but
+  # hermes lazy-installs optional deps at runtime through a uv -> pip ->
+  # ensurepip ladder, and these tool venvs ship without pip. Dropping uv leaves
+  # only the ensurepip tier, degrading every lazy install. 48MB is worth that.
+  log "pruning uv build cache"
+  uv cache clean >/dev/null 2>&1 || true
+  rm -rf /root/.cache/uv
 }
 
 install_binary() {
