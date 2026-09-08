@@ -88,7 +88,13 @@ if (WRITE) {
       if (pkgName) d.package = `${pkgName}@${c.to}`;
     }
     if (d.kind === "binary") {
-      const nextArchive = entry.archive ?? entry.download?.url;
+      // Upstream nests per-platform artifacts under distribution.binary.
+      // Reading entry.archive directly always yields undefined, which silently
+      // bumped the version while leaving the old archive URL and checksum.
+      const platform = d.platform ?? "linux-x86_64";
+      const upBin = entry.distribution?.binary?.[platform] ?? entry.binary?.[platform];
+      const nextArchive = upBin?.archive ?? entry.archive ?? entry.download?.url;
+      if (upBin?.sha256) d.sha256 = upBin.sha256;
       if (nextArchive && nextArchive !== d.archive) {
         d.archive = nextArchive;
         // Version moved, so the old checksum is meaningless — re-pin it.

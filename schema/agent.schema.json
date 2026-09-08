@@ -208,6 +208,47 @@
           "description": "Regex (JS syntax). When the agent answers `initialize` with a JSON-RPC error, or exits early, and the error message / stderr matches this pattern, the smoke test passes as 'login required'. Anything else — malformed output, an unrecognised crash, or silence — still fails. Keep the pattern narrow so real breakage is not masked."
         }
       }
+    },
+    "integration": {
+      "type": "object",
+      "description": "How Zakura wires this agent up. Ships with the registry so the host needs no per-agent code.",
+      "additionalProperties": false,
+      "properties": {
+        "zakuraRoute": {
+          "type": "boolean",
+          "default": false,
+          "description": "Agent can be pointed at Zakura's own model gateway."
+        },
+        "modelPrefix": {
+          "type": "string",
+          "description": "Prefix prepended to model ids when routed through Zakura (e.g. 'zakura/'). Only meaningful with zakuraRoute."
+        },
+        "sessionModeId": {
+          "type": "string",
+          "description": "ACP session mode id to request on session/new."
+        },
+        "forceHttpMcp": {
+          "type": "boolean",
+          "default": false,
+          "description": "Agent only speaks HTTP MCP; never hand it a stdio gateway."
+        },
+        "preinstalled": {
+          "type": "boolean",
+          "default": false,
+          "description": "Binary already exists in the image; skip any install step."
+        },
+        "installHint": {
+          "type": "string",
+          "description": "Human-facing hint shown when setup needs manual action."
+        },
+        "dotenv": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Files written into the adapter home before launch; values may use ${VAR} placeholders."
+        }
+      }
     }
   }
 }

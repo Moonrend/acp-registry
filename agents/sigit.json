@@ -1,11 +1,11 @@
 {
   "id": "sigit",
   "name": "siGit Code",
-  "version": "1.5.2",
+  "version": "1.5.7",
   "profileId": "sigit",
   "dist": {
     "kind": "npx",
-    "package": "@smbcloud/sigit@1.5.2"
+    "package": "@smbcloud/sigit@1.5.7"
   },
   "storage": {
     "mode": "files",
@@ -28,5 +28,8 @@
       "self",
       "api_key"
     ]
+  },
+  "integration": {
+    "zakuraRoute": true
   }
 }

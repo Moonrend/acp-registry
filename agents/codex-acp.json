@@ -63,5 +63,8 @@
     "noBrowserEnv": {
       "NO_BROWSER": "1"
     }
+  },
+  "integration": {
+    "zakuraRoute": true
   }
 }

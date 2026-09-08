@@ -23,6 +23,11 @@ const index = {
     dist: { kind: a.dist.kind },
     storage: a.storage,
     auth: a.auth ?? { modes: ["self"] },
+    // Everything a host needs to present and wire the agent up, so no
+    // per-agent code has to live outside this registry.
+    ...(a.description ? { description: a.description } : {}),
+    ...(a.homepage ? { homepage: a.homepage } : {}),
+    ...(a.integration ? { integration: a.integration } : {}),
   })),
 };
 // Content hash lets a host cache the index and detect changes cheaply.

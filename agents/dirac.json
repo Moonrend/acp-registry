@@ -1,11 +1,11 @@
 {
   "id": "dirac",
   "name": "Dirac",
-  "version": "0.5.9",
+  "version": "0.5.10",
   "profileId": "dirac",
   "dist": {
     "kind": "npx",
-    "package": "dirac-cli@0.5.9",
+    "package": "dirac-cli@0.5.10",
     "args": [
       "--acp"
     ]
@@ -31,5 +31,8 @@
       "self",
       "api_key"
     ]
+  },
+  "integration": {
+    "zakuraRoute": true
   }
 }

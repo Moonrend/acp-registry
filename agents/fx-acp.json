@@ -40,5 +40,9 @@
   },
   "smoke": {
     "loginRequiredPattern": "fx needs access to Vercel AI Gateway|Run fx login to sign in"
+  },
+  "integration": {
+    "zakuraRoute": true,
+    "preinstalled": true
   }
 }

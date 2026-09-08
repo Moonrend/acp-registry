@@ -1,11 +1,11 @@
 {
   "id": "grok-build",
   "name": "Grok Build",
-  "version": "1.0.21",
+  "version": "1.0.24",
   "profileId": "grok",
   "dist": {
     "kind": "npx",
-    "package": "@xai-official/grok@1.0.21",
+    "package": "@xai-official/grok@1.0.24",
     "args": [
       "agent",
       "stdio"
@@ -32,5 +32,8 @@
       "oauth",
       "api_key"
     ]
+  },
+  "integration": {
+    "zakuraRoute": true
   }
 }
