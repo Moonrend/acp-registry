@@ -247,6 +247,13 @@
             "type": "string"
           },
           "description": "Files written into the adapter home before launch; values may use ${VAR} placeholders."
+        },
+        "runtimeFiles": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "string"
+          },
+          "description": "Runtime-only files written relative to the adapter home before launch. Templates may use ${api_key}, ${base_url}, ${model}, ${provider}, and ${runtime_provider}."
         }
       }
     }
