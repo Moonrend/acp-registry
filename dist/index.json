@@ -981,7 +981,7 @@
       "integration": {
         "zakuraRoute": true,
         "dotenv": {
-          ".env": "LLM_PROVIDER=openai\nLLM_MODEL=${model}\nLLM_API_KEY=${api_key}\nOPENAI_API_KEY=${api_key}\nHERMES_API_KEY=${api_key}\nOPENAI_API_TOKEN=${api_key}\nAPI_KEY=${api_key}\nLLM_BASE_URL=${base_url}\nOPENAI_BASE_URL=${base_url}\nOPENAI_API_BASE=${base_url}\nOPENAI_API_BASE_URL=${base_url}\nLLM_API_BASE=${base_url}\nLLM_API_BASE_URL=${base_url}\nHERMES_BASE_URL=${base_url}\n"
+          ".env": "LLM_PROVIDER=${provider}\nLLM_MODEL=${model}\nLLM_API_KEY=${api_key}\nOPENAI_API_KEY=${api_key}\nHERMES_API_KEY=${api_key}\nOPENAI_API_TOKEN=${api_key}\nAPI_KEY=${api_key}\nLLM_BASE_URL=${base_url}\nOPENAI_BASE_URL=${base_url}\nOPENAI_API_BASE=${base_url}\nOPENAI_API_BASE_URL=${base_url}\nLLM_API_BASE=${base_url}\nLLM_API_BASE_URL=${base_url}\nHERMES_BASE_URL=${base_url}\n"
         }
       }
     },
@@ -1485,5 +1485,5 @@
       }
     }
   ],
-  "digest": "d1b78961fb068b0e"
+  "digest": "26eb715321a611cd"
 }
