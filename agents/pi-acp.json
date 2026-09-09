@@ -33,6 +33,7 @@
     ]
   },
   "integration": {
-    "zakuraRoute": true
+    "zakuraRoute": true,
+    "modelPrefix": "zakura/"
   }
 }

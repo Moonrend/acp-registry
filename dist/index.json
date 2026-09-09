@@ -1299,7 +1299,8 @@
         ]
       },
       "integration": {
-        "zakuraRoute": true
+        "zakuraRoute": true,
+        "modelPrefix": "zakura/"
       }
     },
     {
@@ -1498,5 +1499,5 @@
       }
     }
   ],
-  "digest": "9ffb612ff6be6d77"
+  "digest": "057821b59672c55f"
 }
