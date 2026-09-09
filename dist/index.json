@@ -738,7 +738,8 @@
       "description": "fx CLI（fx acp）— Vercel AI Gateway 驱动的编码代理",
       "homepage": "https://fx.sh",
       "integration": {
-        "preinstalled": true
+        "preinstalled": true,
+        "zakuraRoute": true
       }
     },
     {
@@ -910,6 +911,9 @@
           "oauth",
           "api_key"
         ]
+      },
+      "integration": {
+        "zakuraRoute": true
       }
     },
     {
@@ -1090,6 +1094,9 @@
           "oauth",
           "api_key"
         ]
+      },
+      "integration": {
+        "zakuraRoute": true
       }
     },
     {
@@ -1491,5 +1498,5 @@
       }
     }
   ],
-  "digest": "f82fdcabfd4a4390"
+  "digest": "9ffb612ff6be6d77"
 }

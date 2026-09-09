@@ -32,5 +32,8 @@
       "oauth",
       "api_key"
     ]
+  },
+  "integration": {
+    "zakuraRoute": true
   }
 }
