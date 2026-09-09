@@ -25,6 +25,7 @@ ARG ACP_ARGS="[]"
 ARG ACP_ENV="{}"
 # Comma-separated "pkg==ver" pins for transitive deps upstream left unbounded.
 ARG ACP_CONSTRAINTS=""
+ARG ACP_EXTRA_PACKAGES="[]"
 
 ENV ACP_ID=${ACP_ID} \
     ACP_KIND=${ACP_KIND} \
@@ -33,7 +34,7 @@ ENV ACP_ID=${ACP_ID} \
 # Installs the adapter AND bakes ${ACP_HOME}/etc/{argv,env}. Only this step can
 # resolve the real executable path: npm bin names are not derivable from the
 # package name, and archive layouts vary per release.
-RUN ACP_ARGS="${ACP_ARGS}" ACP_ENV="${ACP_ENV}" ACP_CONSTRAINTS="${ACP_CONSTRAINTS}" \
+RUN ACP_ARGS="${ACP_ARGS}" ACP_ENV="${ACP_ENV}" ACP_CONSTRAINTS="${ACP_CONSTRAINTS}" ACP_EXTRA_PACKAGES="${ACP_EXTRA_PACKAGES}" \
     /usr/local/bin/install-adapter \
     && test -s "${ACP_HOME}/etc/argv" \
     && test -x "$(head -n1 "${ACP_HOME}/etc/argv")"

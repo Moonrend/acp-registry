@@ -4,7 +4,7 @@
   "version": "0.0.7",
   "profileId": "fx",
   "homepage": "https://fx.sh",
-  "description": "fx CLI（fx acp）— Vercel AI Gateway 驱动的编码代理",
+  "description": "fx CLI\uff08fx acp\uff09\u2014 Vercel AI Gateway \u9a71\u52a8\u7684\u7f16\u7801\u4ee3\u7406",
   "dist": {
     "kind": "binary",
     "archive": "https://releases.fx.sh/v0.0.7/fx-linux-x86_64.tar.gz",
@@ -42,7 +42,6 @@
     "loginRequiredPattern": "fx needs access to Vercel AI Gateway|Run fx login to sign in"
   },
   "integration": {
-    "zakuraRoute": true,
     "preinstalled": true
   }
 }

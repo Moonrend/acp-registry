@@ -261,9 +261,6 @@
           "self",
           "api_key"
         ]
-      },
-      "integration": {
-        "zakuraRoute": true
       }
     },
     {
@@ -525,9 +522,6 @@
           "self",
           "api_key"
         ]
-      },
-      "integration": {
-        "zakuraRoute": true
       }
     },
     {
@@ -626,7 +620,13 @@
         ]
       },
       "integration": {
-        "zakuraRoute": true
+        "zakuraRoute": true,
+        "env": {
+          "DIRAC_PROVIDER": "openai",
+          "DIRAC_API_KEY": "${managed.zakura_api_key}",
+          "DIRAC_BASE_URL": "${managed.zakura_base_url}",
+          "DIRAC_MODEL": "${managed.model}"
+        }
       }
     },
     {
@@ -693,7 +693,13 @@
         ]
       },
       "integration": {
-        "zakuraRoute": true
+        "zakuraRoute": true,
+        "env": {
+          "FAST_AGENT_MODEL": "generic.${managed.model}",
+          "GENERIC__API_KEY": "${managed.zakura_api_key}",
+          "GENERIC__BASE_URL": "${managed.zakura_base_url}",
+          "GENERIC__DEFAULT_MODEL": "${managed.model}"
+        }
       }
     },
     {
@@ -732,7 +738,6 @@
       "description": "fx CLI（fx acp）— Vercel AI Gateway 驱动的编码代理",
       "homepage": "https://fx.sh",
       "integration": {
-        "zakuraRoute": true,
         "preinstalled": true
       }
     },
@@ -865,7 +870,14 @@
         ]
       },
       "integration": {
-        "zakuraRoute": true
+        "zakuraRoute": true,
+        "env": {
+          "GOOSE_PROVIDER": "openai",
+          "GOOSE_MODEL": "${managed.model}",
+          "OPENAI_API_KEY": "${managed.zakura_api_key}",
+          "OPENAI_HOST": "${managed.zakura_base_url}",
+          "OPENAI_BASE_PATH": "chat/completions"
+        }
       }
     },
     {
@@ -898,9 +910,6 @@
           "oauth",
           "api_key"
         ]
-      },
-      "integration": {
-        "zakuraRoute": true
       }
     },
     {
@@ -1081,9 +1090,6 @@
           "oauth",
           "api_key"
         ]
-      },
-      "integration": {
-        "zakuraRoute": true
       }
     },
     {
@@ -1257,9 +1263,9 @@
     {
       "id": "pi-acp",
       "name": "pi ACP",
-      "version": "0.0.33",
+      "version": "0.0.33-zakura.1",
       "profileId": "pi",
-      "image": "ghcr.io/moonrend/acp-registry/pi-acp:0.0.33",
+      "image": "ghcr.io/moonrend/acp-registry/pi-acp:0.0.33-zakura.1",
       "dist": {
         "kind": "npx"
       },
@@ -1418,9 +1424,6 @@
           "self",
           "api_key"
         ]
-      },
-      "integration": {
-        "zakuraRoute": true
       }
     },
     {
@@ -1488,5 +1491,5 @@
       }
     }
   ],
-  "digest": "a7fa8205602207d3"
+  "digest": "f82fdcabfd4a4390"
 }

@@ -36,6 +36,12 @@
     ]
   },
   "integration": {
-    "zakuraRoute": true
+    "zakuraRoute": true,
+    "env": {
+      "FAST_AGENT_MODEL": "generic.${managed.model}",
+      "GENERIC__API_KEY": "${managed.zakura_api_key}",
+      "GENERIC__BASE_URL": "${managed.zakura_base_url}",
+      "GENERIC__DEFAULT_MODEL": "${managed.model}"
+    }
   }
 }

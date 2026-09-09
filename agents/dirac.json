@@ -33,6 +33,12 @@
     ]
   },
   "integration": {
-    "zakuraRoute": true
+    "zakuraRoute": true,
+    "env": {
+      "DIRAC_PROVIDER": "openai",
+      "DIRAC_API_KEY": "${managed.zakura_api_key}",
+      "DIRAC_BASE_URL": "${managed.zakura_base_url}",
+      "DIRAC_MODEL": "${managed.model}"
+    }
   }
 }

@@ -35,6 +35,13 @@
     ]
   },
   "integration": {
-    "zakuraRoute": true
+    "zakuraRoute": true,
+    "env": {
+      "GOOSE_PROVIDER": "openai",
+      "GOOSE_MODEL": "${managed.model}",
+      "OPENAI_API_KEY": "${managed.zakura_api_key}",
+      "OPENAI_HOST": "${managed.zakura_base_url}",
+      "OPENAI_BASE_PATH": "chat/completions"
+    }
   }
 }

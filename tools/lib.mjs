@@ -49,6 +49,7 @@ export function buildArgs(agent) {
     ACP_ENV: JSON.stringify(d.env ?? {}),
     // Comma-separated so the shell installer can split without a JSON parser.
     ACP_CONSTRAINTS: (d.constraints ?? []).join(","),
+    ACP_EXTRA_PACKAGES: JSON.stringify(d.extraPackages ?? []),
   };
   return args;
 }

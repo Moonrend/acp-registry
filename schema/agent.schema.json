@@ -88,6 +88,14 @@
           },
           "description": "uvx: pins for transitive deps upstream left unbounded, e.g. \"agent-client-protocol==0.8.1\". Needed when a breaking release of a shared library would otherwise break an already-pinned adapter.",
           "default": []
+        },
+        "extraPackages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "npx: companion packages installed in the same image because the ACP shim invokes them at runtime.",
+          "default": []
         }
       }
     },
@@ -205,7 +213,7 @@
       "properties": {
         "loginRequiredPattern": {
           "type": "string",
-          "description": "Regex (JS syntax). When the agent answers `initialize` with a JSON-RPC error, or exits early, and the error message / stderr matches this pattern, the smoke test passes as 'login required'. Anything else — malformed output, an unrecognised crash, or silence — still fails. Keep the pattern narrow so real breakage is not masked."
+          "description": "Regex (JS syntax). When the agent answers `initialize` with a JSON-RPC error, or exits early, and the error message / stderr matches this pattern, the smoke test passes as 'login required'. Anything else \u2014 malformed output, an unrecognised crash, or silence \u2014 still fails. Keep the pattern narrow so real breakage is not masked."
         }
       }
     },

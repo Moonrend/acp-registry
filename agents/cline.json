@@ -31,8 +31,5 @@
       "self",
       "api_key"
     ]
-  },
-  "integration": {
-    "zakuraRoute": true
   }
 }

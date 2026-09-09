@@ -14,9 +14,14 @@ log() { echo "[install-adapter] $*" >&2; }
 
 install_npx() {
   : "${ACP_PACKAGE:?ACP_PACKAGE is required for kind=npx}"
-  log "npm install -g ${ACP_PACKAGE}"
-  # Pin to the exact version from the registry; no implicit upgrade at runtime.
-  npm install -g --no-audit --no-fund "${ACP_PACKAGE}"
+  local extras=()
+  while IFS= read -r extra; do
+    [ -n "${extra}" ] || continue
+    extras+=("${extra}")
+  done < <(node -e 'for (const x of JSON.parse(process.argv[1] || "[]")) console.log(x)' "${ACP_EXTRA_PACKAGES:-[]}")
+  log "npm install -g ${ACP_PACKAGE}${extras[*]:+ ${extras[*]}}"
+  # Pin to the exact versions from the registry; no implicit upgrade at runtime.
+  npm install -g --no-audit --no-fund "${ACP_PACKAGE}" "${extras[@]}"
   npm cache clean --force >/dev/null 2>&1 || true
 
   # The executable name lives in the package's "bin" field and is NOT derivable
