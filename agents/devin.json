@@ -1,12 +1,12 @@
 {
   "id": "devin",
   "name": "Devin",
-  "version": "3000.6.14",
+  "version": "3000.10.21",
   "profileId": "devin",
   "dist": {
     "kind": "binary",
-    "archive": "https://static.devin.ai/cli/3000.6.14/devin-3000.6.14-x86_64-unknown-linux.tar.gz",
-    "sha256": "28cf64c1df9f58ccd063fb7e6fd6e9391073c585b733449371485e1ef8a3e6db",
+    "archive": "https://static.devin.ai/cli/3000.10.21/devin-3000.10.21-x86_64-unknown-linux.tar.gz",
+    "sha256": "7cac6f5739ba3a3e5542f3b7fa07ed902d6dfb96ca22e4c63ae84c03bb7db47c",
     "cmd": "./bin/devin",
     "args": [
       "acp"

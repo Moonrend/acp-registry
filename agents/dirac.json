@@ -1,11 +1,11 @@
 {
   "id": "dirac",
   "name": "Dirac",
-  "version": "0.5.10",
+  "version": "0.5.12",
   "profileId": "dirac",
   "dist": {
     "kind": "npx",
-    "package": "dirac-cli@0.5.10",
+    "package": "dirac-cli@0.5.12",
     "args": [
       "--acp"
     ]

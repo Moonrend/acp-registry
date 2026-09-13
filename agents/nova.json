@@ -1,11 +1,11 @@
 {
   "id": "nova",
   "name": "Nova",
-  "version": "1.1.37",
+  "version": "1.1.38",
   "profileId": "nova",
   "dist": {
     "kind": "npx",
-    "package": "@compass-ai/nova@1.1.37",
+    "package": "@compass-ai/nova@1.1.38",
     "args": [
       "acp"
     ]

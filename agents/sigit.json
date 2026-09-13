@@ -1,11 +1,11 @@
 {
   "id": "sigit",
   "name": "siGit Code",
-  "version": "1.5.7",
+  "version": "1.5.8",
   "profileId": "sigit",
   "dist": {
     "kind": "npx",
-    "package": "@smbcloud/sigit@1.5.7"
+    "package": "@smbcloud/sigit@1.5.8"
   },
   "storage": {
     "mode": "files",

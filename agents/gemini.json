@@ -1,11 +1,11 @@
 {
   "id": "gemini",
   "name": "Gemini CLI",
-  "version": "0.58.0",
+  "version": "0.59.0",
   "profileId": "gemini-cli",
   "dist": {
     "kind": "npx",
-    "package": "@google/gemini-cli@0.58.0",
+    "package": "@google/gemini-cli@0.59.0",
     "args": [
       "--acp"
     ]

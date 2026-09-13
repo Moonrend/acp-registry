@@ -1,11 +1,11 @@
 {
   "id": "dimcode",
   "name": "DimCode",
-  "version": "0.3.30",
+  "version": "0.5.2",
   "profileId": "dimcode",
   "dist": {
     "kind": "npx",
-    "package": "dimcode@0.3.30",
+    "package": "dimcode@0.5.2",
     "args": [
       "acp"
     ]

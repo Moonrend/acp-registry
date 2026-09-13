@@ -165,9 +165,9 @@
     {
       "id": "claude-acp",
       "name": "Claude Agent",
-      "version": "0.75.1",
+      "version": "0.76.0",
       "profileId": "claude-code",
-      "image": "ghcr.io/moonrend/acp-registry/claude-acp:0.75.1",
+      "image": "ghcr.io/moonrend/acp-registry/claude-acp:0.76.0",
       "dist": {
         "kind": "npx"
       },
@@ -266,9 +266,9 @@
     {
       "id": "codebuddy-code",
       "name": "Codebuddy Code",
-      "version": "2.147.0",
+      "version": "2.150.0",
       "profileId": "codebuddy",
-      "image": "ghcr.io/moonrend/acp-registry/codebuddy-code:2.147.0",
+      "image": "ghcr.io/moonrend/acp-registry/codebuddy-code:2.150.0",
       "dist": {
         "kind": "npx"
       },
@@ -298,9 +298,9 @@
     {
       "id": "codex-acp",
       "name": "Codex",
-      "version": "1.10.0",
+      "version": "1.11.0",
       "profileId": "codex",
-      "image": "ghcr.io/moonrend/acp-registry/codex-acp:1.10.0",
+      "image": "ghcr.io/moonrend/acp-registry/codex-acp:1.11.0",
       "dist": {
         "kind": "npx"
       },
@@ -464,9 +464,9 @@
     {
       "id": "cursor",
       "name": "Cursor",
-      "version": "2026.09.02",
+      "version": "2026.09.08",
       "profileId": "cursor",
-      "image": "ghcr.io/moonrend/acp-registry/cursor:2026.09.02",
+      "image": "ghcr.io/moonrend/acp-registry/cursor:2026.09.08",
       "dist": {
         "kind": "binary"
       },
@@ -527,9 +527,9 @@
     {
       "id": "devin",
       "name": "Devin",
-      "version": "3000.6.14",
+      "version": "3000.10.21",
       "profileId": "devin",
-      "image": "ghcr.io/moonrend/acp-registry/devin:3000.6.14",
+      "image": "ghcr.io/moonrend/acp-registry/devin:3000.10.21",
       "dist": {
         "kind": "binary"
       },
@@ -559,9 +559,9 @@
     {
       "id": "dimcode",
       "name": "DimCode",
-      "version": "0.3.30",
+      "version": "0.5.2",
       "profileId": "dimcode",
-      "image": "ghcr.io/moonrend/acp-registry/dimcode:0.3.30",
+      "image": "ghcr.io/moonrend/acp-registry/dimcode:0.5.2",
       "dist": {
         "kind": "npx"
       },
@@ -591,9 +591,9 @@
     {
       "id": "dirac",
       "name": "Dirac",
-      "version": "0.5.10",
+      "version": "0.5.12",
       "profileId": "dirac",
-      "image": "ghcr.io/moonrend/acp-registry/dirac:0.5.10",
+      "image": "ghcr.io/moonrend/acp-registry/dirac:0.5.12",
       "dist": {
         "kind": "npx"
       },
@@ -632,9 +632,9 @@
     {
       "id": "factory-droid",
       "name": "Factory Droid",
-      "version": "0.213.0",
+      "version": "0.218.1",
       "profileId": "factory-droid",
-      "image": "ghcr.io/moonrend/acp-registry/factory-droid:0.213.0",
+      "image": "ghcr.io/moonrend/acp-registry/factory-droid:0.218.1",
       "dist": {
         "kind": "npx"
       },
@@ -745,9 +745,9 @@
     {
       "id": "gemini",
       "name": "Gemini CLI",
-      "version": "0.58.0",
+      "version": "0.59.0",
       "profileId": "gemini-cli",
-      "image": "ghcr.io/moonrend/acp-registry/gemini:0.58.0",
+      "image": "ghcr.io/moonrend/acp-registry/gemini:0.59.0",
       "dist": {
         "kind": "npx"
       },
@@ -842,9 +842,9 @@
     {
       "id": "goose",
       "name": "goose",
-      "version": "1.49.0",
+      "version": "1.50.0",
       "profileId": "goose",
-      "image": "ghcr.io/moonrend/acp-registry/goose:1.49.0",
+      "image": "ghcr.io/moonrend/acp-registry/goose:1.50.0",
       "dist": {
         "kind": "binary"
       },
@@ -884,9 +884,9 @@
     {
       "id": "grok-build",
       "name": "Grok Build",
-      "version": "1.0.24",
+      "version": "1.0.30",
       "profileId": "grok",
-      "image": "ghcr.io/moonrend/acp-registry/grok-build:1.0.24",
+      "image": "ghcr.io/moonrend/acp-registry/grok-build:1.0.30",
       "dist": {
         "kind": "npx"
       },
@@ -919,9 +919,9 @@
     {
       "id": "harn",
       "name": "Harn",
-      "version": "0.10.133",
+      "version": "0.10.135",
       "profileId": "harn",
-      "image": "ghcr.io/moonrend/acp-registry/harn:0.10.133",
+      "image": "ghcr.io/moonrend/acp-registry/harn:0.10.135",
       "dist": {
         "kind": "binary"
       },
@@ -1004,9 +1004,9 @@
     {
       "id": "junie",
       "name": "Junie",
-      "version": "3123.7.0",
+      "version": "3218.3.0",
       "profileId": "junie",
-      "image": "ghcr.io/moonrend/acp-registry/junie:3123.7.0",
+      "image": "ghcr.io/moonrend/acp-registry/junie:3218.3.0",
       "dist": {
         "kind": "binary"
       },
@@ -1035,9 +1035,9 @@
     {
       "id": "kilo",
       "name": "Kilo",
-      "version": "7.5.16",
+      "version": "7.6.2",
       "profileId": "kilo",
-      "image": "ghcr.io/moonrend/acp-registry/kilo:7.5.16",
+      "image": "ghcr.io/moonrend/acp-registry/kilo:7.6.2",
       "dist": {
         "kind": "npx"
       },
@@ -1194,9 +1194,9 @@
     {
       "id": "nova",
       "name": "Nova",
-      "version": "1.1.37",
+      "version": "1.1.38",
       "profileId": "nova",
-      "image": "ghcr.io/moonrend/acp-registry/nova:1.1.37",
+      "image": "ghcr.io/moonrend/acp-registry/nova:1.1.38",
       "dist": {
         "kind": "npx"
       },
@@ -1226,9 +1226,9 @@
     {
       "id": "opencode",
       "name": "OpenCode",
-      "version": "1.18.29",
+      "version": "1.18.30",
       "profileId": "opencode",
-      "image": "ghcr.io/moonrend/acp-registry/opencode:1.18.29",
+      "image": "ghcr.io/moonrend/acp-registry/opencode:1.18.30",
       "dist": {
         "kind": "binary"
       },
@@ -1270,9 +1270,9 @@
     {
       "id": "pi-acp",
       "name": "pi ACP",
-      "version": "0.0.33-zakura.1",
+      "version": "0.0.33",
       "profileId": "pi",
-      "image": "ghcr.io/moonrend/acp-registry/pi-acp:0.0.33-zakura.1",
+      "image": "ghcr.io/moonrend/acp-registry/pi-acp:0.0.33",
       "dist": {
         "kind": "npx"
       },
@@ -1370,9 +1370,9 @@
     {
       "id": "qwen-code",
       "name": "Qwen Code",
-      "version": "0.23.0",
+      "version": "0.23.3",
       "profileId": "qwen-code",
-      "image": "ghcr.io/moonrend/acp-registry/qwen-code:0.23.0",
+      "image": "ghcr.io/moonrend/acp-registry/qwen-code:0.23.3",
       "dist": {
         "kind": "npx"
       },
@@ -1405,9 +1405,9 @@
     {
       "id": "sigit",
       "name": "siGit Code",
-      "version": "1.5.7",
+      "version": "1.5.8",
       "profileId": "sigit",
-      "image": "ghcr.io/moonrend/acp-registry/sigit:1.5.7",
+      "image": "ghcr.io/moonrend/acp-registry/sigit:1.5.8",
       "dist": {
         "kind": "npx"
       },
@@ -1499,5 +1499,5 @@
       }
     }
   ],
-  "digest": "057821b59672c55f"
+  "digest": "72cc260e76335ed5"
 }

@@ -1,11 +1,11 @@
 {
   "id": "qwen-code",
   "name": "Qwen Code",
-  "version": "0.23.0",
+  "version": "0.23.3",
   "profileId": "qwen-code",
   "dist": {
     "kind": "npx",
-    "package": "@qwen-code/qwen-code@0.23.0",
+    "package": "@qwen-code/qwen-code@0.23.3",
     "args": [
       "--acp",
       "--experimental-skills"
