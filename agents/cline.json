@@ -1,11 +1,11 @@
 {
   "id": "cline",
   "name": "Cline",
-  "version": "3.0.61",
+  "version": "3.0.62",
   "profileId": "cline",
   "dist": {
     "kind": "npx",
-    "package": "cline@3.0.61",
+    "package": "cline@3.0.62",
     "args": [
       "--acp"
     ]

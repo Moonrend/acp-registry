@@ -1,7 +1,7 @@
 {
   "id": "pi-acp",
   "name": "pi ACP",
-  "version": "0.0.33-zakura.1",
+  "version": "0.0.33",
   "profileId": "pi",
   "dist": {
     "kind": "npx",
