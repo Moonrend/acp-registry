@@ -1,11 +1,11 @@
 {
   "id": "github-copilot-cli",
   "name": "GitHub Copilot",
-  "version": "1.0.83",
+  "version": "1.0.88",
   "profileId": "copilot",
   "dist": {
     "kind": "npx",
-    "package": "@github/copilot@1.0.83",
+    "package": "@github/copilot@1.0.88",
     "args": [
       "--acp"
     ]

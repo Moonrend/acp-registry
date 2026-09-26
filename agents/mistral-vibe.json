@@ -1,12 +1,12 @@
 {
   "id": "mistral-vibe",
   "name": "Mistral Vibe",
-  "version": "2.24.1",
+  "version": "2.25.8",
   "profileId": "mistral-vibe",
   "dist": {
     "kind": "binary",
-    "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.24.1/vibe-acp-linux-x86_64-2.24.1.tar.gz",
-    "sha256": "8e87f581e7c292fbeab7377178e947ddc4e83753c409f1db0760631f11d7083c",
+    "archive": "https://github.com/mistralai/mistral-vibe/releases/download/v2.25.8/vibe-acp-linux-x86_64-2.25.8.tar.gz",
+    "sha256": "dbe693ee66f29fdfcf9029dcbf3b2d4da138554b193e432b089840148ecf08b3",
     "cmd": "./vibe-acp"
   },
   "storage": {

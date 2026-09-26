@@ -1,12 +1,12 @@
 {
   "id": "harn",
   "name": "Harn",
-  "version": "0.10.133",
+  "version": "0.10.143",
   "profileId": "harn",
   "dist": {
     "kind": "binary",
-    "archive": "https://github.com/burin-labs/harn/releases/download/v0.10.133/harn-x86_64-unknown-linux-gnu.tar.gz",
-    "sha256": "59cac77a437387e9de2ff450eabfcc3f2f6e80b9cf35bc56f7f11911bf719bd9",
+    "archive": "https://github.com/burin-labs/harn/releases/download/v0.10.143/harn-x86_64-unknown-linux-gnu.tar.gz",
+    "sha256": "17895bdc0c4f6e5b2b2ce5737feda99050d1dccd2c31f64a0292b34d9fc61b4a",
     "cmd": "./harn",
     "args": [
       "serve",
