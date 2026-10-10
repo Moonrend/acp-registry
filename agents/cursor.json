@@ -1,12 +1,12 @@
 {
   "id": "cursor",
   "name": "Cursor",
-  "version": "2026.09.02",
+  "version": "2026.10.01",
   "profileId": "cursor",
   "dist": {
     "kind": "binary",
-    "archive": "https://downloads.cursor.com/lab/2026.09.02-c22c1a3/linux/x64/agent-cli-package.tar.gz",
-    "sha256": "b73b59854762535c0fc20d7ccc51c3b5a356a851491088d60a362be48750f53c",
+    "archive": "https://downloads.cursor.com/lab/2026.10.01-14929f9/linux/x64/agent-cli-package.tar.gz",
+    "sha256": "ba9a855f8f813c91b9f2707127572d2dc9ae5a62818e1c36719625d0fb8bd452",
     "cmd": "./dist-package/cursor-agent",
     "args": [
       "acp"
