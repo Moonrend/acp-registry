@@ -1,12 +1,12 @@
 {
   "id": "amp-acp",
   "name": "Amp",
-  "version": "0.9.0",
+  "version": "0.10.0",
   "profileId": "amp",
   "dist": {
     "kind": "binary",
-    "archive": "https://github.com/tao12345666333/amp-acp/releases/download/v0.9.0/amp-acp-linux-x86_64.tar.gz",
-    "sha256": "afaa50a152eb86a8ff21e354ded63fe2d21b730859692e3a60b2c4c9ef23df31",
+    "archive": "https://github.com/tao12345666333/amp-acp/releases/download/v0.10.0/amp-acp-linux-x86_64.tar.gz",
+    "sha256": "320959bb1de650681413a3fc72febd62fded65c734b9ab3399855e007fcdd1ba",
     "cmd": "./amp-acp"
   },
   "storage": {
