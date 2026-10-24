@@ -1,12 +1,12 @@
 {
   "id": "opencode",
   "name": "OpenCode",
-  "version": "1.18.29",
+  "version": "1.19.4",
   "profileId": "opencode",
   "dist": {
     "kind": "binary",
-    "archive": "https://github.com/anomalyco/opencode/releases/download/v1.18.29/opencode-linux-x64.tar.gz",
-    "sha256": "ea800b7ff56226b70952126c9fc1e2517ca4c4b5682fd9d3f9e87449697a1194",
+    "archive": "https://github.com/anomalyco/opencode/releases/download/v1.19.4/opencode-linux-x64.tar.gz",
+    "sha256": "849bd6b3d959a1d2ef200ed1634a51c79a45ca236aa26665d75debd694805cce",
     "cmd": "./opencode",
     "args": [
       "acp"

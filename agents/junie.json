@@ -1,12 +1,12 @@
 {
   "id": "junie",
   "name": "Junie",
-  "version": "3123.7.0",
+  "version": "3813.9.0",
   "profileId": "junie",
   "dist": {
     "kind": "binary",
-    "archive": "https://github.com/JetBrains/junie-acp-release/releases/download/3123.7/junie-release-3123.7-linux-amd64.zip",
-    "sha256": "072bc7ec0c3cf2753859272a2271ebea5c71c17f21781e675559ed3c96022e4e",
+    "archive": "https://github.com/JetBrains/junie-acp-release/releases/download/3813.9/junie-release-3813.9-linux-amd64.zip",
+    "sha256": "50a02b7414e382974a55d13f5be3025d1b4005407aea7f1d01df4e817059560f",
     "cmd": "./junie-app/bin/junie",
     "args": [
       "--acp=true"
