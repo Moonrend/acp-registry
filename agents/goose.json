@@ -1,12 +1,12 @@
 {
   "id": "goose",
   "name": "goose",
-  "version": "1.49.0",
+  "version": "1.57.0",
   "profileId": "goose",
   "dist": {
     "kind": "binary",
-    "archive": "https://github.com/block/goose/releases/download/v1.49.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
-    "sha256": "c631a55e7d826d28c3bcd87b71a0aaecc9612f5a44e6c0d01e7a5b82dd8b7143",
+    "archive": "https://github.com/block/goose/releases/download/v1.57.0/goose-x86_64-unknown-linux-gnu.tar.bz2",
+    "sha256": "e54036f3b7f95d3b0d7854c09465af5ef52a28c7fa03d2497d0ea68a6382282d",
     "cmd": "./goose",
     "args": [
       "acp"

@@ -1,11 +1,11 @@
 {
   "id": "pi-acp",
   "name": "pi ACP",
-  "version": "0.0.33-zakura.1",
+  "version": "0.0.34",
   "profileId": "pi",
   "dist": {
     "kind": "npx",
-    "package": "pi-acp@0.0.33",
+    "package": "pi-acp@0.0.34",
     "extraPackages": [
       "@earendil-works/pi-coding-agent@0.84.4"
     ]
