@@ -1,11 +1,11 @@
 {
   "id": "autohand",
   "name": "Autohand Code",
-  "version": "0.2.1",
+  "version": "0.9.11",
   "profileId": "autohand",
   "dist": {
     "kind": "npx",
-    "package": "@autohandai/autohand-acp@0.2.1"
+    "package": "@autohandai/autohand-acp@0.9.11"
   },
   "storage": {
     "mode": "files",

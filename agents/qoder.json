@@ -1,11 +1,11 @@
 {
   "id": "qoder",
   "name": "Qoder CLI",
-  "version": "0.2.14",
+  "version": "1.1.89",
   "profileId": "qoder",
   "dist": {
     "kind": "npx",
-    "package": "@qoder-ai/qodercli@0.2.14",
+    "package": "@qoder-ai/qodercli@1.1.89",
     "args": [
       "--acp"
     ]
