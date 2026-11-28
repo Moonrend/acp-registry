@@ -1,12 +1,12 @@
 {
   "id": "crow-cli",
   "name": "crow-cli",
-  "version": "0.1.24",
+  "version": "0.1.51",
   "profileId": "crow-cli",
   "dist": {
     "kind": "binary",
-    "archive": "https://github.com/crow-cli/crow-cli/releases/download/v0.1.24/crow-cli-linux-x86_64.tar.gz",
-    "sha256": "cad2bf555b2c8045d7fcfc1670d89ef3244aacda10cb46faefab7585d0a0589d",
+    "archive": "https://github.com/crow-cli/crow-cli/releases/download/v0.1.51/crow-cli-linux-x86_64.tar.gz",
+    "sha256": "f726ec8306f8dd765546efd3b28509f47dee5805abfe06d6f6e23af8e4e74ef8",
     "cmd": "./crow-cli",
     "args": [
       "acp"
